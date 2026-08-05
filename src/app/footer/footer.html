@@ -1,5 +1,15 @@
 <mat-toolbar color="tertiary" class="footer">
-  <span>&copy; {{ year }} Portfolio</span>
-  <span class="spacer"></span>
-  <span>Rodapé</span>
+  <div class="footer-content">
+    <span class="brand">&copy; {{ year }} Maria Clara Corecha</span>
+    <span class="spacer"></span>
+    <div class="footer-links">
+      <a mat-icon-button [href]="githubUrl" target="_blank" rel="noopener" aria-label="GitHub">
+        <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" class="footer-icon" />
+      </a>
+      <a mat-icon-button [href]="'mailto:' + email" aria-label="Enviar e-mail">
+        <mat-icon>email</mat-icon>
+      </a>
+      <span class="footer-email">{{ email }}</span>
+    </div>
+  </div>
 </mat-toolbar>
