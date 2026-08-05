@@ -1,8 +1,8 @@
-<h2>Contato</h2>
-<p>Tem algum feedback? Preencha o formulário abaixo para enviar um e-mail diretamente para mim.</p>
+<h2 class="feedback-title">Contato</h2>
+<p class="feedback-hint">Tem algum feedback? Envie uma mensagem direto para mim.</p>
 
 <form class="feedback-form" [formGroup]="form" (ngSubmit)="submit()">
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
     <mat-label>Nome</mat-label>
     <input matInput formControlName="name" required />
     @if (form.controls.name.invalid && form.controls.name.touched) {
@@ -10,7 +10,7 @@
     }
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
     <mat-label>E-mail</mat-label>
     <input matInput type="email" formControlName="email" required />
     @if (form.controls.email.hasError('required') && form.controls.email.touched) {
@@ -21,13 +21,15 @@
     }
   </mat-form-field>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field appearance="outline" subscriptSizing="dynamic">
     <mat-label>Mensagem</mat-label>
-    <textarea matInput formControlName="message" rows="4" required></textarea>
+    <textarea matInput formControlName="message" rows="3" required></textarea>
     @if (form.controls.message.invalid && form.controls.message.touched) {
       <mat-error>Escreva uma mensagem.</mat-error>
     }
   </mat-form-field>
 
-  <button mat-flat-button color="primary" type="submit">Enviar feedback</button>
+  <button mat-stroked-button color="primary" type="submit" class="submit-button">
+    Enviar feedback
+  </button>
 </form>

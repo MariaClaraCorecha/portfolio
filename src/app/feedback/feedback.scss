@@ -1,6 +1,23 @@
+.feedback-title {
+  font-size: 1.3rem;
+  text-shadow: none;
+}
+
+.feedback-hint {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
 .feedback-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  max-width: 480px;
+  gap: 0.4rem;
+  max-width: 380px;
+  font-size: 0.9rem;
+}
+
+.submit-button {
+  align-self: flex-start;
+  font-size: 0.8rem;
 }
