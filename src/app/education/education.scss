@@ -20,6 +20,36 @@
   flex: 1;
 }
 
+mat-card-header {
+  margin-bottom: 0.75rem;
+}
+
+mat-card-title {
+  margin-bottom: 0.35rem;
+}
+
+.period {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.25rem;
+  font-size: 0.85rem;
+  color: var(--mat-sys-on-surface-variant);
+
+  mat-icon {
+    width: 18px;
+    height: 18px;
+    font-size: 18px;
+    color: var(--mat-sys-primary);
+  }
+}
+
+mat-chip-set {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
 .description {
-  margin: 0.75rem 0 0;
+  margin: 0;
+  line-height: 1.6;
 }
