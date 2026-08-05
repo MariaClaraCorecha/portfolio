@@ -11,5 +11,5 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrl: './header.scss',
 })
 export class Header {
-  readonly title = input('portfolio');
+  readonly title = input('PORTFÓLIO');
 }
