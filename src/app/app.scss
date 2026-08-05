@@ -10,3 +10,11 @@
 section {
   scroll-margin-top: 72px;
 }
+
+.back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 90;
+  box-shadow: 0 0 16px rgba(255, 46, 196, 0.6);
+}
