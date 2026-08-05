@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
+import { getTechIcon } from '../shared/tech-icon';
 
 interface ExperienceEntry {
   role: string;
@@ -60,4 +61,6 @@ export class Experience {
       technologies: ['Java', 'PHP', 'Docker', 'Linux', 'Arquitetura Limpa', 'Angular Material', 'React'],
     },
   ];
+
+  readonly getTechIcon = getTechIcon;
 }
