@@ -1,25 +1,36 @@
 <app-header [title]="title()" />
 
 <main class="content">
-  <section id="sobre">
+  <section id="sobre" appRevealOnScroll>
     <app-about />
   </section>
 
-  <section id="experiencia">
+  <section id="experiencia" appRevealOnScroll>
     <app-experience />
   </section>
 
-  <section id="tecnologias">
+  <section id="tecnologias" appRevealOnScroll>
     <app-technologies />
   </section>
 
-  <section id="projetos">
+  <section id="projetos" appRevealOnScroll>
     <app-projects />
   </section>
 
-  <section id="contato">
+  <section id="contato" appRevealOnScroll>
     <app-feedback />
   </section>
 </main>
 
 <app-footer />
+
+@if (showBackToTop()) {
+  <button
+    mat-fab
+    class="back-to-top"
+    aria-label="Voltar ao topo"
+    (click)="scrollToTop()"
+  >
+    <mat-icon>arrow_upward</mat-icon>
+  </button>
+}
