@@ -37,14 +37,16 @@ export class Experience {
       ],
       technologies: [
         'Angular',
-        'React',
-        'Java',
         'PHP',
         'Linux',
         'Docker',
         'Arquitetura Limpa',
         'API',
         'Banco de Dados',
+        'SQLite',
+        'Trello',
+        'Git',
+        'GitHub',
       ],
     },
     {
