@@ -5,14 +5,30 @@
       <mat-card-subtitle>Projeto inicial configurado</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        Conteudo do portfólio
-      </p>
+      <p>Conteudo do portfólio</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button color="primary">Começar</button>
+      <a mat-flat-button color="primary" href="#sobre">Começar</a>
     </mat-card-actions>
   </mat-card>
 
-  <router-outlet />
+  <section id="sobre">
+    <app-about />
+  </section>
+
+  <section id="experiencia">
+    <app-experience />
+  </section>
+
+  <section id="tecnologias">
+    <app-technologies />
+  </section>
+
+  <section id="projetos">
+    <app-projects />
+  </section>
+
+  <section id="contato">
+    <app-feedback />
+  </section>
 </main>
