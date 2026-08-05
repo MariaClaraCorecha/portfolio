@@ -117,4 +117,25 @@ h3,
 .mat-mdc-unelevated-button.mat-primary {
   box-shadow: 0 0 12px rgba(255, 46, 196, 0.6);
 }
+
+// Sections fade/slide into view as they scroll into the viewport (see
+// RevealOnScrollDirective). Respect users who've asked for less motion.
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+  &.revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 /* You can add global styles to this file, and also import other style files */
