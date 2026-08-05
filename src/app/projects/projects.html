@@ -1,0 +1,21 @@
+<h2>Projetos</h2>
+<div class="projects-grid">
+  @for (project of projects; track project.title) {
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ project.description }}</p>
+        <mat-chip-set aria-label="Tecnologias">
+          @for (tech of project.tech; track tech) {
+            <mat-chip>{{ tech }}</mat-chip>
+          }
+        </mat-chip-set>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button color="primary" [href]="project.link">Ver código</a>
+      </mat-card-actions>
+    </mat-card>
+  }
+</div>
