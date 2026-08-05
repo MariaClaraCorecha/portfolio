@@ -1,0 +1,33 @@
+<h2>Contato</h2>
+<p>Tem algum feedback? Preencha o formulário abaixo para enviar um e-mail diretamente para mim.</p>
+
+<form class="feedback-form" [formGroup]="form" (ngSubmit)="submit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="name" required />
+    @if (form.controls.name.invalid && form.controls.name.touched) {
+      <mat-error>Informe seu nome.</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>E-mail</mat-label>
+    <input matInput type="email" formControlName="email" required />
+    @if (form.controls.email.hasError('required') && form.controls.email.touched) {
+      <mat-error>Informe seu e-mail.</mat-error>
+    }
+    @if (form.controls.email.hasError('email') && form.controls.email.touched) {
+      <mat-error>Informe um e-mail válido.</mat-error>
+    }
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Mensagem</mat-label>
+    <textarea matInput formControlName="message" rows="4" required></textarea>
+    @if (form.controls.message.invalid && form.controls.message.touched) {
+      <mat-error>Escreva uma mensagem.</mat-error>
+    }
+  </mat-form-field>
+
+  <button mat-flat-button color="primary" type="submit">Enviar feedback</button>
+</form>
