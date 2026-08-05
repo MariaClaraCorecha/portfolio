@@ -27,14 +27,14 @@ export class Projects {
     },
     {
       title: 'Projeto Exemplo 2',
-      description: 'Descreva aqui o objetivo e o resultado deste projeto.',
+      description: 'loren',
       tech: ['Angular Material', 'SCSS'],
       link: '#',
     },
     {
       title: 'Projeto Exemplo 3',
-      description: 'Descreva aqui o objetivo e o resultado deste projeto.',
-      tech: ['TypeScript', 'RxJS'],
+      description: 'loren',
+      tech: ['Java', 'SpringBoot'],
       link: '#',
     },
   ];
