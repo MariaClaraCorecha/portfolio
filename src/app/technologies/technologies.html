@@ -1,0 +1,13 @@
+<h2>Tecnologias</h2>
+<div class="tech-categories">
+  @for (category of categories; track category.name) {
+    <div class="tech-category">
+      <h3>{{ category.name }}</h3>
+      <mat-chip-set [attr.aria-label]="category.name">
+        @for (item of category.items; track item) {
+          <mat-chip>{{ item }}</mat-chip>
+        }
+      </mat-chip-set>
+    </div>
+  }
+</div>
