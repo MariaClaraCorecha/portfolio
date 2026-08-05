@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Sobre mim</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Olá! Sou desenvolvedora e estou construindo este portfólio para
+      apresentar meus projetos e experiência. Edite este texto para contar um
+      pouco sobre sua trajetória, interesses e o que você busca.
+    </p>
+    <mat-chip-set aria-label="Habilidades">
+      @for (skill of skills; track skill) {
+        <mat-chip>{{ skill }}</mat-chip>
+      }
+    </mat-chip-set>
+  </mat-card-content>
+</mat-card>
