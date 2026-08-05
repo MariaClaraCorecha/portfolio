@@ -17,7 +17,17 @@
           </ul>
           <mat-chip-set aria-label="Tecnologias utilizadas">
             @for (tech of entry.technologies; track tech) {
-              <mat-chip>{{ tech }}</mat-chip>
+              @let icon = getTechIcon(tech);
+              <mat-chip>
+                @if (icon.kind === 'logo') {
+                  <img matChipAvatar [src]="icon.value" [alt]="tech" />
+                } @else if (icon.kind === 'logo-mono') {
+                  <img matChipAvatar class="icon-mono" [src]="icon.value" [alt]="tech" />
+                } @else {
+                  <mat-icon matChipAvatar>{{ icon.value }}</mat-icon>
+                }
+                {{ tech }}
+              </mat-chip>
             }
           </mat-chip-set>
         </mat-card-content>
