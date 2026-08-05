@@ -5,7 +5,17 @@
       <h3>{{ category.name }}</h3>
       <mat-chip-set [attr.aria-label]="category.name">
         @for (item of category.items; track item) {
-          <mat-chip>{{ item }}</mat-chip>
+          @let icon = getTechIcon(item);
+          <mat-chip>
+            @if (icon.kind === 'logo') {
+              <img matChipAvatar [src]="icon.value" [alt]="item" />
+            } @else if (icon.kind === 'logo-mono') {
+              <img matChipAvatar class="icon-mono" [src]="icon.value" [alt]="item" />
+            } @else {
+              <mat-icon matChipAvatar>{{ icon.value }}</mat-icon>
+            }
+            {{ item }}
+          </mat-chip>
         }
       </mat-chip-set>
     </div>
