@@ -1,3 +1,29 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
 .spacer {
   flex: 1 1 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-menu-trigger {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-menu-trigger {
+    display: inline-flex;
+  }
 }
