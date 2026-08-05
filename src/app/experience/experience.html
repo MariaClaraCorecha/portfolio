@@ -1,0 +1,17 @@
+<h2>Experiência</h2>
+<div class="timeline">
+  @for (entry of entries; track entry.role + entry.company) {
+    <mat-card class="timeline-item">
+      <mat-icon class="timeline-icon">work</mat-icon>
+      <div class="timeline-content">
+        <mat-card-header>
+          <mat-card-title>{{ entry.role }}</mat-card-title>
+          <mat-card-subtitle>{{ entry.company }} · {{ entry.period }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ entry.description }}</p>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  }
+</div>
