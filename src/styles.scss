@@ -91,7 +91,12 @@ h3,
   letter-spacing: 0.03em;
 }
 
-h2 {
+// Section and card titles stand out in neon pink instead of the default text color.
+h1,
+h2,
+h3,
+.mat-mdc-card-title {
+  color: var(--mat-sys-primary);
   text-shadow: 0 0 12px rgba(255, 46, 196, 0.55);
 }
 
