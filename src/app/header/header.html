@@ -2,11 +2,30 @@
   <span class="brand">{{ title() }}</span>
   <span class="spacer"></span>
   <nav class="nav-links">
-    <a mat-button href="#sobre">Sobre mim</a>
-    <a mat-button href="#experiencia">Experiência</a>
-    <a mat-button href="#tecnologias">Tecnologias</a>
-    <a mat-button href="#projetos">Projetos</a>
-    <a mat-button href="#contato">Contato</a>
+    <a mat-button href="#sobre" [class.active]="activeSection.activeId() === 'sobre'">
+      <mat-icon>person</mat-icon>
+      <span>Sobre mim</span>
+    </a>
+    <a mat-button href="#formacao" [class.active]="activeSection.activeId() === 'formacao'">
+      <mat-icon>school</mat-icon>
+      <span>Formação</span>
+    </a>
+    <a mat-button href="#experiencia" [class.active]="activeSection.activeId() === 'experiencia'">
+      <mat-icon>work</mat-icon>
+      <span>Experiência</span>
+    </a>
+    <a mat-button href="#tecnologias" [class.active]="activeSection.activeId() === 'tecnologias'">
+      <mat-icon>memory</mat-icon>
+      <span>Tecnologias</span>
+    </a>
+    <a mat-button href="#projetos" [class.active]="activeSection.activeId() === 'projetos'">
+      <mat-icon>folder</mat-icon>
+      <span>Projetos</span>
+    </a>
+    <a mat-button href="#contato" [class.active]="activeSection.activeId() === 'contato'">
+      <mat-icon>mail</mat-icon>
+      <span>Contato</span>
+    </a>
   </nav>
   <button
     mat-icon-button
@@ -17,11 +36,11 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #navMenu="matMenu">
-    <a mat-menu-item href="#sobre">Sobre mim</a>
-    <a mat-menu-item href="#experiencia">Experiência</a>
-    <a mat-menu-item href="#tecnologias">Tecnologias</a>
-    <a mat-menu-item href="#projetos">Projetos</a>
-    <a mat-menu-item href="#contato">Contato</a>
+    <a mat-menu-item href="#sobre"><mat-icon>person</mat-icon>Sobre mim</a>
+    <a mat-menu-item href="#experiencia"><mat-icon>work</mat-icon>Experiência</a>
+    <a mat-menu-item href="#tecnologias"><mat-icon>memory</mat-icon>Tecnologias</a>
+    <a mat-menu-item href="#projetos"><mat-icon>folder</mat-icon>Projetos</a>
+    <a mat-menu-item href="#contato"><mat-icon>mail</mat-icon>Contato</a>
   </mat-menu>
   <a
     mat-icon-button

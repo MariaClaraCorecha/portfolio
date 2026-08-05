@@ -4,6 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Header } from './header/header';
 import { Footer } from './footer/footer';
 import { About } from './about/about';
+import { Education } from './education/education';
 import { Experience } from './experience/experience';
 import { Technologies } from './technologies/technologies';
 import { Projects } from './projects/projects';
@@ -11,7 +12,7 @@ import { Feedback } from './feedback/feedback';
 import { ActiveSectionService } from './shared/active-section.service';
 import { RevealOnScrollDirective } from './shared/reveal-on-scroll.directive';
 
-const SECTION_IDS = ['sobre', 'experiencia', 'tecnologias', 'projetos', 'contato'];
+const SECTION_IDS = ['sobre', 'formacao', 'experiencia', 'tecnologias', 'projetos', 'contato'];
 
 @Component({
   selector: 'app-root',
@@ -19,6 +20,7 @@ const SECTION_IDS = ['sobre', 'experiencia', 'tecnologias', 'projetos', 'contato
     Header,
     Footer,
     About,
+    Education,
     Experience,
     Technologies,
     Projects,
