@@ -19,10 +19,11 @@ interface Project {
 export class Projects {
   readonly projects: Project[] = [
     {
-      title: 'Projeto Exemplo 1',
-      description: 'Descreva aqui o objetivo e o resultado deste projeto.',
-      tech: ['Angular', 'TypeScript'],
-      link: '#',
+      title: 'CatWorld - Site sobre Gatos',
+      description:
+        'Site informativo sobre gatos, com quiz interativo e perfil de usuário para cadastrar informações pessoais, dados dos pets e histórico de vacinação. Desenvolvido com Angular, Angular Material, TypeScript e JavaScript, com autenticação via conta Google (Google Cloud) para salvar o progresso e os dados do usuário na nuvem.',
+      tech: ['Angular', 'Angular Material', 'TypeScript', 'JavaScript', 'Google Cloud'],
+      link: 'https://catworld-ten.vercel.app/',
     },
     {
       title: 'Projeto Exemplo 2',
