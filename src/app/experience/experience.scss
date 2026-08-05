@@ -19,3 +19,15 @@
 .timeline-content {
   flex: 1;
 }
+
+.summary {
+  margin: 0 0 0.75rem;
+}
+
+.responsibilities {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}

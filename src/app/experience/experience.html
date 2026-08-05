@@ -9,7 +9,17 @@
           <mat-card-subtitle>{{ entry.company }} · {{ entry.period }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <p>{{ entry.description }}</p>
+          <p class="summary">{{ entry.summary }}</p>
+          <ul class="responsibilities">
+            @for (item of entry.responsibilities; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+          <mat-chip-set aria-label="Tecnologias utilizadas">
+            @for (tech of entry.technologies; track tech) {
+              <mat-chip>{{ tech }}</mat-chip>
+            }
+          </mat-chip-set>
         </mat-card-content>
       </div>
     </mat-card>
