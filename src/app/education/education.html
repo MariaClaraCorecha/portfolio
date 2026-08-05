@@ -6,9 +6,13 @@
       <div class="timeline-content">
         <mat-card-header>
           <mat-card-title>{{ entry.course }}</mat-card-title>
-          <mat-card-subtitle>{{ entry.institution }} · {{ entry.period }}</mat-card-subtitle>
+          <mat-card-subtitle>{{ entry.institution }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
+          <p class="period">
+            <mat-icon>event</mat-icon>
+            {{ entry.period }}
+          </p>
           <mat-chip-set aria-label="Status">
             <mat-chip>{{ entry.status }}</mat-chip>
           </mat-chip-set>
