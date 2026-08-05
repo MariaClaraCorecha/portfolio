@@ -5,6 +5,24 @@
   z-index: 100;
 }
 
+.mat-toolbar {
+  background-image: linear-gradient(100deg, var(--mat-sys-primary) 0%, var(--mat-sys-tertiary) 130%);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--mat-sys-on-primary-container), transparent);
+    opacity: 0.7;
+  }
+}
+
+.brand {
+  font-weight: 700;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -12,6 +30,18 @@
 .nav-links {
   display: flex;
   gap: 0.25rem;
+}
+
+.nav-links a,
+.nav-menu-trigger,
+.github-link {
+  color: var(--mat-sys-on-primary);
+  transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  }
 }
 
 .nav-menu-trigger {
