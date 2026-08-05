@@ -60,7 +60,7 @@ export class Experience {
         'Suporte à manutenção de bancos de dados e ao atendimento via helpdesk',
         'Contato com arquiteturas limpas e frameworks modernos de frontend e backend',
       ],
-      technologies: ['Java', 'PHP', 'Docker', 'Linux', 'Arquitetura Limpa', 'Angular Material', 'React'],
+      technologies: ['PHP', 'Docker', 'Linux', 'Arquitetura Limpa', 'Angular Material', 'React'],
     },
   ];
 
