@@ -20,7 +20,11 @@
 }
 
 .brand {
+  font-family: 'Orbitron', 'Roboto', sans-serif;
+  font-size: 1.1rem;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 10px var(--mat-sys-on-primary-container);
 }
 
 .spacer {
