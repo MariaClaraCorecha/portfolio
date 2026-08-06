@@ -26,9 +26,9 @@ export class Experience {
       company: 'Grupo Mônaco',
       period: '2026 — Atual',
       summary:
-        'Desenvolvedora de software júnior, atuando no desenvolvimento e na manutenção de sistemas internos com soluções backend e frontend.',
+        'Desenvolvedora de software júnior, atuando no desenvolvimento e na manutenção de sistemas internos com soluções backend e frontend, aplicando boas práticas de arquitetura de software.',
       responsibilities: [
-        'Desenvolvimento de sistemas completos em Java, atendendo às demandas internas da empresa',
+        'Desenvolvimento de sistemas completos em PHP, Laravel, Angular e TypeScript, com arquitetura limpa, atendendo às demandas internas da empresa',
         'Criação de APIs para integração entre os sistemas internos da empresa',
         'Desenvolvimento e manutenção de sistemas internos utilizados por diferentes áreas da empresa',
         'Implementação de melhorias e novas funcionalidades em sistemas já existentes',
@@ -54,13 +54,13 @@ export class Experience {
       company: 'Grupo Mônaco Diesel',
       period: 'Janeiro de 2026 — Março de 2026',
       summary:
-        'Estágio no departamento de TI, com atuação no setor de desenvolvimento de software e primeiro contato com o ambiente corporativo de tecnologia.',
+        'Estágio no departamento de TI, com atuação no desenvolvimento de software e primeiro contato com o ambiente corporativo de tecnologia, dando os primeiros passos em arquitetura limpa e boas práticas de desenvolvimento.',
       responsibilities: [
         'Apoio no desenvolvimento e na evolução dos sistemas internos da empresa',
         'Suporte à manutenção de bancos de dados e ao atendimento via helpdesk',
-        'Contato com arquiteturas limpas e frameworks modernos de frontend e backend',
+        'Contato com arquitetura limpa e frameworks modernos de frontend e backend',
       ],
-      technologies: ['PHP', 'Docker', 'Linux', 'Arquitetura Limpa', 'Angular Material', 'SQLlite'],
+      technologies: ['PHP', 'Docker', 'Linux', 'Arquitetura Limpa', 'Angular Material', 'SQLite'],
     },
   ];
 
