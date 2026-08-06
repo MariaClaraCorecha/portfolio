@@ -26,10 +26,11 @@ export class Projects {
       link: 'https://catworld-ten.vercel.app/',
     },
     {
-      title: 'Projeto Exemplo 2',
-      description: 'loren',
-      tech: ['Angular Material', 'SCSS'],
-      link: '#',
+      title: 'Biblioteca em Java',
+      description:
+        'Sistema de gerenciamento de biblioteca que permite emprestar, vender e alugar livros, com um banco de dados MySQL para armazenar informações sobre livros, clientes e bibliotecários. O projeto aplica conceitos de Programação Orientada a Objetos (POO) em Java, como encapsulamento, herança e abstração.',
+      tech: ['Java', 'POO', 'MySQL'],
+      link: 'https://github.com/MariaClaraCorecha/Biblioteca',
     },
     {
       title: 'Projeto Exemplo 3',
