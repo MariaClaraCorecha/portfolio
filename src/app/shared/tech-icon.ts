@@ -5,9 +5,7 @@ export interface TechIcon {
 
 interface LogoEntry {
   slug: string;
-  /** Brand hex color. Omit for logos blocked on the colorizing CDN (trademark restrictions) — those fall back to a monochrome icon. */
   color?: string;
-  /** Use the full-color devicon artwork instead of the simple-icons wordmark. */
   source?: 'devicon';
 }
 

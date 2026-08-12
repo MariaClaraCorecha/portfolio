@@ -17,16 +17,20 @@ $tertiary: #4a4374;
 $tertiary-container: #dad4f0;
 $on-tertiary-container: #2e2856;
 
-$ink: #241f33;
-$ink-soft: #6b6478;
+$ink: #2a241c;
+$ink-soft: #6b6153;
 
-$bg: #f8f6fd;
-$surface-container-low: #f2eefb;
-$surface-container: #efeafa;
-$surface-container-high: #e6dff6;
-$surface-container-highest: #ddd3f1;
-$outline: #d6ccec;
-$outline-variant: #eae5f7;
+// Warm pastel-beige neutrals for the background/surfaces, kept distinct
+// from the purple brand accent (primary/tertiary above) so the palette
+// reads as neutral canvas + color accent rather than all-purple.
+$bg: #f7f3ea;
+$surface: #fffdf8;
+$surface-container-low: #f2ecdf;
+$surface-container: #ebe2d0;
+$surface-container-high: #e1d5bd;
+$surface-container-highest: #d5c6a8;
+$outline: #d6c7a4;
+$outline-variant: #ece3cf;
 
 html {
   height: 100%;
@@ -59,12 +63,12 @@ html {
 
   --mat-sys-background: #{$bg};
   --mat-sys-on-background: #{$ink};
-  --mat-sys-surface: #ffffff;
+  --mat-sys-surface: #{$surface};
   --mat-sys-on-surface: #{$ink};
   --mat-sys-on-surface-variant: #{$ink-soft};
   --mat-sys-surface-dim: #{$surface-container-low};
-  --mat-sys-surface-bright: #ffffff;
-  --mat-sys-surface-container-lowest: #ffffff;
+  --mat-sys-surface-bright: #{$surface};
+  --mat-sys-surface-container-lowest: #{$surface};
   --mat-sys-surface-container-low: #{$surface-container-low};
   --mat-sys-surface-container: #{$surface-container};
   --mat-sys-surface-container-high: #{$surface-container-high};
@@ -113,13 +117,13 @@ h3 {
 }
 
 .mat-toolbar {
-  box-shadow: 0 1px 3px rgba(36, 31, 51, 0.08);
+  box-shadow: 0 1px 3px rgba(42, 36, 28, 0.08);
 }
 
 .mat-mdc-card {
   border: 1px solid var(--mat-sys-outline-variant);
   border-radius: 12px;
-  box-shadow: 0 1px 2px rgba(36, 31, 51, 0.05);
+  box-shadow: 0 1px 2px rgba(42, 36, 28, 0.05);
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover {
