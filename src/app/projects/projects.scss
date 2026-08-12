@@ -1,9 +1,8 @@
-// Professional accent palette to visually separate the project categories:
-// a cool blue for client-side work, a deep teal for server-side work. Kept
-// distinct from the site's pastel-purple brand color so the grouping reads
-// clearly at a glance.
-$frontend-accent: #3b5bdb;
-$backend-accent: #12836f;
+// Category accents, defined centrally in styles.scss as part of the
+// portfolio's palette (--accent-gold / --accent-terracotta) so they stay
+// in the same warm, rosé family as the primary brand color.
+$frontend-accent: var(--accent-gold);
+$backend-accent: var(--accent-terracotta);
 
 .project-category {
   margin-bottom: 2rem;

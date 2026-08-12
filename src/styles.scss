@@ -77,6 +77,13 @@ html {
 
   --mat-sys-outline: #{$outline};
   --mat-sys-outline-variant: #{$outline-variant};
+
+  // Extra accent colors for grouping content by category (the Frontend/
+  // Backend split in the Projects section). Kept in the same warm, rosé
+  // family as the primary/tertiary brand colors above so the grouping
+  // stands out without clashing with the rest of the palette.
+  --accent-gold: #9c6b2e;
+  --accent-terracotta: #a6543b;
 }
 
 body {

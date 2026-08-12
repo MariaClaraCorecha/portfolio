@@ -1,23 +1,58 @@
-.feedback-title {
-  font-size: 1.3rem;
-  text-shadow: none;
+.feedback-card {
+  padding: 0.5rem;
+}
+
+.feedback-layout {
+  display: flex;
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.feedback-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .feedback-hint {
-  margin: 0 0 1rem;
-  font-size: 0.85rem;
-  opacity: 0.8;
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.direct-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
 }
 
 .feedback-form {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  max-width: 380px;
-  font-size: 0.9rem;
+  gap: 0.9rem;
 }
 
 .submit-button {
   align-self: flex-start;
-  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 767px) {
+  .feedback-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
