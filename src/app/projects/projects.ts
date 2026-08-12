@@ -33,10 +33,11 @@ export class Projects {
       link: 'https://github.com/MariaClaraCorecha/Biblioteca',
     },
     {
-      title: 'Projeto Exemplo 3',
-      description: 'loren',
-      tech: ['Java', 'SpringBoot'],
-      link: '#',
+      title: 'Landing Page - Padaria',
+      description:
+        'Landing page criada para uma padaria, com foco em design e experiência do usuário (UX/UI). Desenvolvida com Angular e TypeScript, apresentando produtos e informações do estabelecimento de forma clara, responsiva e visualmente atrativa.',
+      tech: ['Angular', 'TypeScript'],
+      link: 'https://landigpage-padaria.vercel.app/',
     },
   ];
 }
