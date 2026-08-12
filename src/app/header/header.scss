@@ -6,7 +6,7 @@
 }
 
 // Angular Material's M3 toolbar always uses the surface/on-surface tokens
-// regardless of the `color` input, so the pastel-purple brand bar is set
+// regardless of the `color` input, so the pastel-pink brand bar is set
 // explicitly here instead of relying on `color="primary"`.
 .mat-toolbar {
   background-color: var(--mat-sys-primary);

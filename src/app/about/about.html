@@ -1,32 +1,44 @@
 <mat-card class="about-card">
   <div class="about-layout">
-    <div class="avatar">
-      <mat-icon>account_circle</mat-icon>
+    <div class="avatar-col">
+      <div class="avatar">
+        <mat-icon>account_circle</mat-icon>
+      </div>
+      <div class="avatar-actions">
+        <a mat-icon-button [href]="githubUrl" target="_blank" rel="noopener" aria-label="GitHub">
+          <mat-icon>code</mat-icon>
+        </a>
+        <a mat-icon-button [href]="'mailto:' + email" aria-label="Enviar e-mail">
+          <mat-icon>mail</mat-icon>
+        </a>
+      </div>
     </div>
     <div class="about-body">
-      <mat-card-header>
-        <mat-card-title>Sobre mim</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          Desenvolvedora de Software Full Stack, estudante de Ciência da Computação e
-          atualmente Auxiliar de TI no Grupo Mônaco, onde projeto, desenvolvo e mantenho
-          sistemas internos com Angular, TypeScript, PHP e Laravel. Aplico Clean
-          Architecture, boas práticas de engenharia de software e controle de versão com
-          Git/GitHub na construção de APIs RESTful e interfaces responsivas com foco em
-          experiência do usuário (UX/UI). Atuo tanto em frontend quanto em backend, com
-          interesse contínuo em bancos de dados relacionais, arquitetura de sistemas e
-          metodologias ágeis de desenvolvimento.
-        </p>
-        <div class="highlights">
-          @for (item of highlights; track item.label) {
-            <div class="highlight">
-              <mat-icon>{{ item.icon }}</mat-icon>
-              <span>{{ item.label }}</span>
-            </div>
-          }
-        </div>
-      </mat-card-content>
+      <p class="eyebrow">Sobre mim</p>
+      <h1 class="profile-name">{{ name }}</h1>
+      <p class="profile-role">{{ role }}</p>
+      <p class="bio">
+        Desenvolvedora de Software Full Stack, estudante de Ciência da Computação e
+        atualmente Auxiliar de TI no Grupo Mônaco, onde projeto, desenvolvo e mantenho
+        sistemas internos com Angular, TypeScript, PHP e Laravel. Aplico Clean
+        Architecture, boas práticas de engenharia de software e controle de versão com
+        Git/GitHub na construção de APIs RESTful e interfaces responsivas com foco em
+        experiência do usuário (UX/UI). Atuo tanto em frontend quanto em backend, com
+        interesse contínuo em bancos de dados relacionais, arquitetura de sistemas e
+        metodologias ágeis de desenvolvimento.
+      </p>
+      <div class="highlights">
+        @for (item of highlights; track item.label) {
+          <div class="highlight">
+            <mat-icon>{{ item.icon }}</mat-icon>
+            <span>{{ item.label }}</span>
+          </div>
+        }
+      </div>
+      <div class="cta-row">
+        <a mat-flat-button color="primary" href="#projetos">Ver Projetos</a>
+        <a mat-stroked-button color="primary" href="#contato">Entrar em contato</a>
+      </div>
     </div>
   </div>
 </mat-card>

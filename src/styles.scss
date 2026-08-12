@@ -5,32 +5,33 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
-// Professional, pastel-purple palette layered on top of Angular's default
-// light M3 theme — softer than a saturated brand purple, but the primary
-// tone is still tuned to clear AA text contrast on white surfaces.
-$primary: #7360c9;
-$primary-dim: #5a4699;
-$primary-container: #ece7fa;
-$on-primary-container: #423480;
+// Professional, light-pink (blush) palette layered on top of Angular's
+// default light M3 theme — a dusty rose stands in for the brand accent
+// (deep enough to keep clear AA text contrast on light surfaces), echoed
+// by a deeper wine tone for the footer anchor.
+$primary: #ad5570;
+$primary-dim: #7a3450;
+$primary-container: #f7e1e8;
+$on-primary-container: #7a3450;
 
-$tertiary: #4a4374;
-$tertiary-container: #dad4f0;
-$on-tertiary-container: #2e2856;
+$tertiary: #6b2c43;
+$tertiary-container: #f0d9e1;
+$on-tertiary-container: #5c2438;
 
-$ink: #2a241c;
-$ink-soft: #6b6153;
+$ink: #2e2229;
+$ink-soft: #7a6570;
 
-// Warm pastel-beige neutrals for the background/surfaces, kept distinct
-// from the purple brand accent (primary/tertiary above) so the palette
-// reads as neutral canvas + color accent rather than all-purple.
-$bg: #f7f3ea;
-$surface: #fffdf8;
-$surface-container-low: #f2ecdf;
-$surface-container: #ebe2d0;
-$surface-container-high: #e1d5bd;
-$surface-container-highest: #d5c6a8;
-$outline: #d6c7a4;
-$outline-variant: #ece3cf;
+// Soft blush neutrals for the background/surfaces, a touch lighter than
+// the brand accent above so the palette reads as neutral canvas + color
+// accent rather than a single flat pink.
+$bg: #fbf3f5;
+$surface: #fffbfc;
+$surface-container-low: #f7ecf0;
+$surface-container: #f2e2e8;
+$surface-container-high: #ecd5de;
+$surface-container-highest: #e2c3cf;
+$outline: #ddb8c6;
+$outline-variant: #f0dde4;
 
 html {
   height: 100%;
@@ -39,16 +40,16 @@ html {
     (
       color: (
         theme-type: light,
-        primary: mat.$violet-palette,
-        tertiary: mat.$violet-palette,
+        primary: mat.$rose-palette,
+        tertiary: mat.$rose-palette,
       ),
       typography: Roboto,
       density: 0,
     )
   );
 
-  // Soften the algorithmic M3 light tones into a lighter, pastel purple that
-  // still reads as professional and stays accessible on white surfaces.
+  // Soften the algorithmic M3 light tones into a soft, pastel-pink accent
+  // that still reads as professional and stays accessible on light surfaces.
   --mat-sys-primary: #{$primary};
   --mat-sys-on-primary: #ffffff;
   --mat-sys-primary-container: #{$primary-container};
@@ -110,24 +111,24 @@ h3 {
   font-weight: 600;
 }
 
-// Card titles pick up the pastel-purple accent instead of the default text color.
+// Card titles pick up the pastel-pink accent instead of the default text color.
 .mat-mdc-card-title {
   color: var(--mat-sys-primary);
   font-weight: 600;
 }
 
 .mat-toolbar {
-  box-shadow: 0 1px 3px rgba(42, 36, 28, 0.08);
+  box-shadow: 0 1px 3px rgba(46, 34, 41, 0.08);
 }
 
 .mat-mdc-card {
   border: 1px solid var(--mat-sys-outline-variant);
   border-radius: 12px;
-  box-shadow: 0 1px 2px rgba(42, 36, 28, 0.05);
+  box-shadow: 0 1px 2px rgba(46, 34, 41, 0.05);
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover {
-    box-shadow: 0 10px 24px rgba(115, 96, 201, 0.16);
+    box-shadow: 0 10px 24px rgba(173, 85, 112, 0.18);
     transform: translateY(-2px);
   }
 }

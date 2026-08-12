@@ -1,26 +1,48 @@
 .about-layout {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: flex-start;
-  padding: 1rem;
+  padding: 1.5rem;
+}
+
+.avatar-col {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .avatar {
-  flex: 0 0 auto;
-  width: 88px;
-  height: 88px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid var(--mat-sys-primary);
-  box-shadow: 0 4px 14px rgba(115, 96, 201, 0.28);
+  background-color: var(--mat-sys-primary-container);
+  box-shadow: 0 4px 14px rgba(173, 85, 112, 0.28);
 
   mat-icon {
-    width: 64px;
-    height: 64px;
-    font-size: 64px;
+    width: 72px;
+    height: 72px;
+    font-size: 72px;
     color: var(--mat-sys-primary);
+  }
+}
+
+.avatar-actions {
+  display: flex;
+  gap: 0.25rem;
+
+  a {
+    color: var(--mat-sys-on-surface-variant);
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: var(--mat-sys-primary);
+    }
   }
 }
 
@@ -29,11 +51,37 @@
   min-width: 0;
 }
 
+.eyebrow {
+  margin: 0 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mat-sys-primary);
+}
+
+.profile-name {
+  margin: 0 0 0.15rem;
+  font-size: 1.7rem;
+}
+
+.profile-role {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.bio {
+  margin: 0;
+  line-height: 1.6;
+}
+
 .highlights {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .highlight {
@@ -42,7 +90,7 @@
   gap: 0.5rem;
   padding: 0.4rem 0.85rem;
   border-radius: 999px;
-  border: 1px solid rgba(115, 96, 201, 0.28);
+  border: 1px solid rgba(173, 85, 112, 0.28);
   background-color: var(--mat-sys-surface-container);
   font-size: 0.85rem;
 
@@ -54,10 +102,22 @@
   }
 }
 
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 599px) {
   .about-layout {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+
+  .cta-row,
+  .highlights {
+    justify-content: center;
   }
 }
