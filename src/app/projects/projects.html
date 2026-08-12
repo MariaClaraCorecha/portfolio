@@ -1,21 +1,40 @@
 <h2>Projetos</h2>
-<div class="projects-grid">
-  @for (project of projects; track project.title) {
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{ project.title }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{ project.description }}</p>
-        <mat-chip-set aria-label="Tecnologias">
-          @for (tech of project.tech; track tech) {
-            <mat-chip>{{ tech }}</mat-chip>
-          }
-        </mat-chip-set>
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button color="primary" [href]="project.link">Ver Projeto</a>
-      </mat-card-actions>
-    </mat-card>
-  }
-</div>
+
+@for (category of categories; track category.key) {
+  <div class="project-category" [class.frontend]="category.key === 'frontend'" [class.backend]="category.key === 'backend'">
+    <h3 class="category-heading">
+      <mat-icon>{{ category.icon }}</mat-icon>
+      {{ category.name }}
+    </h3>
+    <div class="projects-grid">
+      @for (project of category.projects; track project.title) {
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>{{ project.title }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{ project.description }}</p>
+            <mat-chip-set aria-label="Tecnologias">
+              @for (tech of project.tech; track tech) {
+                @let icon = getTechIcon(tech);
+                <mat-chip>
+                  @if (icon.kind === 'logo') {
+                    <img matChipAvatar [src]="icon.value" [alt]="tech" />
+                  } @else if (icon.kind === 'logo-mono') {
+                    <img matChipAvatar class="icon-mono" [src]="icon.value" [alt]="tech" />
+                  } @else {
+                    <mat-icon matChipAvatar>{{ icon.value }}</mat-icon>
+                  }
+                  {{ tech }}
+                </mat-chip>
+              }
+            </mat-chip-set>
+          </mat-card-content>
+          <mat-card-actions>
+            <a mat-button color="primary" [href]="project.link">Ver Projeto</a>
+          </mat-card-actions>
+        </mat-card>
+      }
+    </div>
+  </div>
+}

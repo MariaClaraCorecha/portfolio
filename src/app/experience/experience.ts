@@ -26,22 +26,22 @@ export class Experience {
       company: 'Grupo Mônaco',
       period: '2026 — Atual',
       summary:
-        'Desenvolvedora de software júnior, atuando no desenvolvimento e na manutenção de sistemas internos com soluções backend e frontend, aplicando boas práticas de arquitetura de software.',
+        'Desenvolvedora de Software Full Stack júnior, responsável pelo desenvolvimento, manutenção e evolução de sistemas internos com soluções backend e frontend, aplicando Clean Architecture e boas práticas de engenharia de software.',
       responsibilities: [
-        'Desenvolvimento de sistemas completos em PHP, Laravel, Angular e TypeScript, com arquitetura limpa, atendendo às demandas internas da empresa',
-        'Criação de APIs para integração entre os sistemas internos da empresa',
-        'Desenvolvimento e manutenção de sistemas internos utilizados por diferentes áreas da empresa',
+        'Desenvolvimento de sistemas completos em PHP, Laravel, Angular e TypeScript, com Clean Architecture, atendendo às demandas internas da empresa',
+        'Criação e manutenção de APIs RESTful para integração entre os sistemas internos da empresa',
+        'Desenvolvimento e manutenção de sistemas internos utilizados por diferentes áreas da empresa, com foco em performance e usabilidade',
         'Implementação de melhorias e novas funcionalidades em sistemas já existentes',
         'Atendimento e suporte técnico aos usuários via helpdesk, garantindo a continuidade das operações',
-        'Aplicação de princípios de Clean Architecture e boas práticas de desenvolvimento no dia a dia',
+        'Aplicação de Clean Architecture, controle de versão com Git/GitHub e boas práticas de desenvolvimento no dia a dia',
       ],
       technologies: [
         'Angular',
         'PHP',
         'Linux',
         'Docker',
-        'Arquitetura Limpa',
-        'API',
+        'Clean Architecture',
+        'REST API',
         'Banco de Dados',
         'SQLite',
         'Trello',
@@ -54,13 +54,13 @@ export class Experience {
       company: 'Grupo Mônaco Diesel',
       period: 'Janeiro de 2026 — Março de 2026',
       summary:
-        'Estágio no departamento de TI, com atuação no desenvolvimento de software e primeiro contato com o ambiente corporativo de tecnologia, dando os primeiros passos em arquitetura limpa e boas práticas de desenvolvimento.',
+        'Estágio em Desenvolvimento de Software no departamento de TI, com primeiro contato com o ambiente corporativo de tecnologia, aplicando Clean Architecture e boas práticas de desenvolvimento desde o início da carreira.',
       responsibilities: [
-        'Apoio no desenvolvimento e na evolução dos sistemas internos da empresa',
-        'Suporte à manutenção de bancos de dados e ao atendimento via helpdesk',
-        'Contato com arquitetura limpa e frameworks modernos de frontend e backend',
+        'Apoio no desenvolvimento e na evolução de sistemas internos da empresa utilizando PHP e Angular',
+        'Suporte à manutenção de bancos de dados e ao atendimento técnico via helpdesk',
+        'Primeiro contato com Clean Architecture e frameworks modernos de frontend e backend',
       ],
-      technologies: ['PHP', 'Docker', 'Linux', 'Arquitetura Limpa', 'Angular Material', 'SQLite'],
+      technologies: ['PHP', 'Docker', 'Linux', 'Clean Architecture', 'Angular Material', 'SQLite'],
     },
   ];
 

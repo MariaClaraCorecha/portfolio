@@ -1,5 +1,71 @@
+// Professional accent palette to visually separate the project categories:
+// a cool blue for client-side work, a deep teal for server-side work. Kept
+// distinct from the site's pastel-purple brand color so the grouping reads
+// clearly at a glance.
+$frontend-accent: #3b5bdb;
+$backend-accent: #12836f;
+
+.project-category {
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.category-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+
+  mat-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+}
+
+.project-category.frontend {
+  .category-heading {
+    color: $frontend-accent;
+  }
+
+  mat-card {
+    border-top: 3px solid $frontend-accent;
+  }
+
+  .mat-mdc-card-title {
+    color: $frontend-accent;
+  }
+}
+
+.project-category.backend {
+  .category-heading {
+    color: $backend-accent;
+  }
+
+  mat-card {
+    border-top: 3px solid $backend-accent;
+  }
+
+  .mat-mdc-card-title {
+    color: $backend-accent;
+  }
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
+}
+
+::ng-deep .mat-mdc-chip-avatar {
+  object-fit: contain;
+  padding: 3px;
+}
+
+::ng-deep .icon-mono {
+  filter: invert(1);
 }

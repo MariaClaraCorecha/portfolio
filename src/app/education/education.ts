@@ -25,7 +25,7 @@ export class Education {
       period: '2024 — previsão de conclusão no 1º semestre de 2028',
       status: 'Em andamento',
       description:
-        'Graduação com foco em desenvolvimento de software, abrangendo estruturas de dados, algoritmos, banco de dados, arquitetura de sistemas e engenharia de software.',
+        'Graduação com foco em desenvolvimento de software Full Stack, abrangendo lógica de programação, estruturas de dados, algoritmos, Programação Orientada a Objetos (POO), banco de dados relacionais (SQL), arquitetura de sistemas e engenharia de software.',
     },
   ];
 }

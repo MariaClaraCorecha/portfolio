@@ -2,22 +2,16 @@
   flex: 1 1 auto;
 }
 
+// Angular Material's M3 toolbar always uses the surface/on-surface tokens
+// regardless of the `color` input, so the dark tertiary footer bar is set
+// explicitly here instead of relying on `color="tertiary"`.
 .footer {
-  background-image: linear-gradient(100deg, var(--mat-sys-tertiary) 0%, var(--mat-sys-primary) 130%);
-  position: relative;
+  background-color: var(--mat-sys-tertiary);
+  color: var(--mat-sys-on-tertiary);
   font-size: 0.85rem;
   height: auto;
   min-height: 64px;
   padding: 0.75rem 1rem;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--mat-sys-on-tertiary-container), transparent);
-    opacity: 0.7;
-  }
 }
 
 .footer-content {
@@ -31,8 +25,9 @@
 }
 
 .brand {
-  font-family: 'Orbitron', 'Roboto', sans-serif;
-  letter-spacing: 0.03em;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .footer-links {
@@ -42,11 +37,10 @@
 
   a {
     color: var(--mat-sys-on-tertiary);
-    transition: background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out;
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.12);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      background-color: rgba(255, 255, 255, 0.14);
     }
   }
 }

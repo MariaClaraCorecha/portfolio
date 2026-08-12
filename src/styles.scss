@@ -5,17 +5,28 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
-// Neon pink palette used to re-skin the Material system-level color tokens below.
-$neon-pink: #ff2ec4;
-$neon-pink-bright: #ff6bdb;
-$neon-pink-dim: #b3007a;
-$neon-magenta: #c400ff;
-$neon-black: #050506;
-$neon-surface: #0b0b0e;
-$neon-surface-container: #131317;
-$neon-surface-container-high: #1b1b21;
-$neon-surface-container-highest: #24242b;
-$neon-text: #f2eef5;
+// Professional, pastel-purple palette layered on top of Angular's default
+// light M3 theme — softer than a saturated brand purple, but the primary
+// tone is still tuned to clear AA text contrast on white surfaces.
+$primary: #7360c9;
+$primary-dim: #5a4699;
+$primary-container: #ece7fa;
+$on-primary-container: #423480;
+
+$tertiary: #4a4374;
+$tertiary-container: #dad4f0;
+$on-tertiary-container: #2e2856;
+
+$ink: #241f33;
+$ink-soft: #6b6478;
+
+$bg: #f8f6fd;
+$surface-container-low: #f2eefb;
+$surface-container: #efeafa;
+$surface-container-high: #e6dff6;
+$surface-container-highest: #ddd3f1;
+$outline: #d6ccec;
+$outline-variant: #eae5f7;
 
 html {
   height: 100%;
@@ -23,8 +34,8 @@ html {
   @include mat.theme(
     (
       color: (
-        theme-type: dark,
-        primary: mat.$magenta-palette,
+        theme-type: light,
+        primary: mat.$violet-palette,
         tertiary: mat.$violet-palette,
       ),
       typography: Roboto,
@@ -32,46 +43,44 @@ html {
     )
   );
 
-  // Override the generated Material 3 tokens with a true neon-pink-on-black
-  // palette (the algorithmic M3 dark tones are too desaturated for a neon look).
-  --mat-sys-primary: #{$neon-pink};
-  --mat-sys-on-primary: #{$neon-black};
-  --mat-sys-primary-container: #{$neon-pink-dim};
-  --mat-sys-on-primary-container: #{$neon-pink-bright};
-  --mat-sys-inverse-primary: #{$neon-pink-dim};
-  --mat-sys-surface-tint: #{$neon-pink};
+  // Soften the algorithmic M3 light tones into a lighter, pastel purple that
+  // still reads as professional and stays accessible on white surfaces.
+  --mat-sys-primary: #{$primary};
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #{$primary-container};
+  --mat-sys-on-primary-container: #{$on-primary-container};
+  --mat-sys-inverse-primary: #{$primary-dim};
+  --mat-sys-surface-tint: #{$primary};
 
-  --mat-sys-tertiary: #{$neon-magenta};
-  --mat-sys-on-tertiary: #{$neon-black};
-  --mat-sys-tertiary-container: #4a0066;
-  --mat-sys-on-tertiary-container: #eeb3ff;
+  --mat-sys-tertiary: #{$tertiary};
+  --mat-sys-on-tertiary: #ffffff;
+  --mat-sys-tertiary-container: #{$tertiary-container};
+  --mat-sys-on-tertiary-container: #{$on-tertiary-container};
 
-  --mat-sys-background: #{$neon-black};
-  --mat-sys-on-background: #{$neon-text};
-  --mat-sys-surface: #{$neon-surface};
-  --mat-sys-on-surface: #{$neon-text};
-  --mat-sys-on-surface-variant: #cbb8c6;
-  --mat-sys-surface-dim: #{$neon-black};
-  --mat-sys-surface-bright: #{$neon-surface-container-highest};
-  --mat-sys-surface-container-lowest: #{$neon-black};
-  --mat-sys-surface-container-low: #{$neon-surface};
-  --mat-sys-surface-container: #{$neon-surface-container};
-  --mat-sys-surface-container-high: #{$neon-surface-container-high};
-  --mat-sys-surface-container-highest: #{$neon-surface-container-highest};
+  --mat-sys-background: #{$bg};
+  --mat-sys-on-background: #{$ink};
+  --mat-sys-surface: #ffffff;
+  --mat-sys-on-surface: #{$ink};
+  --mat-sys-on-surface-variant: #{$ink-soft};
+  --mat-sys-surface-dim: #{$surface-container-low};
+  --mat-sys-surface-bright: #ffffff;
+  --mat-sys-surface-container-lowest: #ffffff;
+  --mat-sys-surface-container-low: #{$surface-container-low};
+  --mat-sys-surface-container: #{$surface-container};
+  --mat-sys-surface-container-high: #{$surface-container-high};
+  --mat-sys-surface-container-highest: #{$surface-container-highest};
 
-  --mat-sys-outline: #{$neon-pink-dim};
-  --mat-sys-outline-variant: #3a1430;
+  --mat-sys-outline: #{$outline};
+  --mat-sys-outline-variant: #{$outline-variant};
 }
 
 body {
-  // Neon pink/black is the fixed default look for this portfolio, so the
-  // dark tonal values are forced regardless of the visitor's OS setting.
-  color-scheme: dark;
+  color-scheme: light;
 
   // Set a default background, font and text colors for the application using
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
+  background-color: var(--mat-sys-background);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
 
@@ -80,42 +89,43 @@ body {
   height: 100%;
 }
 
-// Techy display font for headings and card titles; body copy stays on Roboto
-// (set via the `typography` theme option above) for readability.
+// Clean, modern display font for headings and card titles; body copy stays
+// on Roboto for readability, keeping the overall look corporate and legible.
 h1,
 h2,
 h3,
 .mat-toolbar,
 .mat-mdc-card-title {
-  font-family: 'Orbitron', 'Roboto', sans-serif;
-  letter-spacing: 0.03em;
+  font-family: 'Poppins', 'Roboto', sans-serif;
 }
 
-// Section and card titles stand out in neon pink instead of the default text color.
 h1,
 h2,
-h3,
-.mat-mdc-card-title {
-  color: var(--mat-sys-primary);
-  text-shadow: 0 0 12px rgba(255, 46, 196, 0.55);
+h3 {
+  color: var(--mat-sys-on-background);
+  font-weight: 600;
 }
 
-// Subtle neon glow accents on the components that carry the primary color.
+// Card titles pick up the pastel-purple accent instead of the default text color.
+.mat-mdc-card-title {
+  color: var(--mat-sys-primary);
+  font-weight: 600;
+}
+
 .mat-toolbar {
-  box-shadow: 0 2px 16px rgba(255, 46, 196, 0.35);
+  box-shadow: 0 1px 3px rgba(36, 31, 51, 0.08);
 }
 
 .mat-mdc-card {
-  border: 1px solid rgba(255, 46, 196, 0.25);
-  transition: box-shadow 0.2s ease-in-out;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(36, 31, 51, 0.05);
+  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover {
-    box-shadow: 0 0 20px rgba(255, 46, 196, 0.3);
+    box-shadow: 0 10px 24px rgba(115, 96, 201, 0.16);
+    transform: translateY(-2px);
   }
-}
-
-.mat-mdc-unelevated-button.mat-primary {
-  box-shadow: 0 0 12px rgba(255, 46, 196, 0.6);
 }
 
 // Sections fade/slide into view as they scroll into the viewport (see

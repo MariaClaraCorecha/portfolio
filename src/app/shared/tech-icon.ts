@@ -41,13 +41,17 @@ const LOGO_MAP: Record<string, LogoEntry> = {
   Figma: { slug: 'figma', color: 'F24E1E' },
   'Node.js': { slug: 'nodedotjs', color: '339933' },
   NestJS: { slug: 'nestjs', color: 'E0234E' },
+  'Google Cloud': { slug: 'googlecloud', color: '4285F4' },
 };
 
 const MATERIAL_ICON_MAP: Record<string, string> = {
   API: 'api',
+  'REST API': 'api',
   'REST APIs': 'api',
   'Banco de Dados': 'storage',
   'Arquitetura Limpa': 'account_tree',
+  'Clean Architecture': 'account_tree',
+  POO: 'account_tree',
 };
 
 export function getTechIcon(name: string): TechIcon {

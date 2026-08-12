@@ -16,7 +16,7 @@ interface Highlight {
 export class About {
   readonly highlights: Highlight[] = [
     { icon: 'school', label: 'Estudante de Ciência da Computação' },
-    { icon: 'code', label: 'Foco em Desenvolvimento de Software' },
+    { icon: 'code', label: 'Desenvolvedora Full Stack' },
     { icon: 'work', label: 'Auxiliar de TI no Grupo Mônaco' },
   ];
 }
