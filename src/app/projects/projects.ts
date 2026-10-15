@@ -46,6 +46,13 @@ export class Projects {
           tech: ['Angular', 'TypeScript'],
           link: 'https://landigpage-padaria.vercel.app/',
         },
+        {
+          title: 'HTTP Cats - Status HTTP com Gatos',
+          description:
+            'Site informativo sobre os códigos de resposta HTTP, ilustrados de forma divertida com gatinhos. Desenvolvido com Angular e TypeScript, apresenta o significado de cada status de forma visual e didática em uma interface responsiva.',
+          tech: ['Angular', 'TypeScript'],
+          link: 'https://ladingpage-http-cats.vercel.app/',
+        },
       ],
     },
     {
@@ -59,6 +66,20 @@ export class Projects {
             'Sistema de gerenciamento de biblioteca desenvolvido em Java, permitindo emprestar, vender e alugar livros, com banco de dados relacional MySQL para armazenar informações sobre livros, clientes e bibliotecários. Aplica Programação Orientada a Objetos (POO) e modelagem de dados, utilizando encapsulamento, herança e abstração como pilares da arquitetura do sistema.',
           tech: ['Java', 'POO', 'MySQL'],
           link: 'https://github.com/MariaClaraCorecha/Biblioteca',
+        },
+        {
+          title: 'Estoque API - Controle de Estoque',
+          description:
+            'Sistema de controle de estoque com API REST em Java 21 e Spring Boot, persistência em PostgreSQL via Spring Data JPA e interface web em Angular Material. Permite gerenciar categorias e produtos, registrar entradas e saídas com atualização automática de saldo, emitir alertas de estoque baixo e acompanhar indicadores em um dashboard. Ambiente containerizado com Docker Compose.',
+          tech: ['Java', 'Spring Boot', 'PostgreSQL', 'REST API', 'Angular', 'Docker'],
+          link: 'https://github.com/MariaClaraCorecha/estoque-api',
+        },
+        {
+          title: 'NASA API - Fotos de Marte',
+          description:
+            'Aplicação em PHP que consome a API pública da NASA para exibir fotos capturadas pelos rovers em Marte, junto com as informações de cada registro. Pratica integração com APIs externas e tratamento de dados em JSON.',
+          tech: ['PHP', 'API'],
+          link: 'https://nasa-api-taupe-rho.vercel.app/',
         },
       ],
     },
