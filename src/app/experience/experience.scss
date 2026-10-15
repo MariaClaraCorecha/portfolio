@@ -31,12 +31,3 @@
   flex-direction: column;
   gap: 0.35rem;
 }
-
-::ng-deep .mat-mdc-chip-avatar {
-  object-fit: contain;
-  padding: 3px;
-}
-
-::ng-deep .icon-mono {
-  filter: invert(1);
-}
