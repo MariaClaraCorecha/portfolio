@@ -19,9 +19,7 @@
                 @let icon = getTechIcon(tech);
                 <mat-chip>
                   @if (icon.kind === 'logo') {
-                    <img matChipAvatar [src]="icon.value" [alt]="tech" />
-                  } @else if (icon.kind === 'logo-mono') {
-                    <img matChipAvatar class="icon-mono" [src]="icon.value" [alt]="tech" />
+                    <img matChipAvatar [src]="icon.value" alt="" />
                   } @else {
                     <mat-icon matChipAvatar>{{ icon.value }}</mat-icon>
                   }

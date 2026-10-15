@@ -79,7 +79,7 @@ export class Projects {
           description:
             'Aplicação em PHP que consome a API pública da NASA para exibir fotos capturadas pelos rovers em Marte, junto com as informações de cada registro. Pratica integração com APIs externas e tratamento de dados em JSON.',
           tech: ['PHP', 'API'],
-          link: 'https://nasa-api-taupe-rho.vercel.app/',
+          link: 'https://github.com/MariaClaraCorecha/nasa-api',
         },
       ],
     },

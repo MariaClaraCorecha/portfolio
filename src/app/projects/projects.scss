@@ -59,12 +59,3 @@ $backend-accent: var(--accent-terracotta);
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1rem;
 }
-
-::ng-deep .mat-mdc-chip-avatar {
-  object-fit: contain;
-  padding: 3px;
-}
-
-::ng-deep .icon-mono {
-  filter: invert(1);
-}
