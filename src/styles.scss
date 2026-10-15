@@ -161,3 +161,22 @@ h3 {
   }
 }
 /* You can add global styles to this file, and also import other style files */
+
+// Tech chips (Projetos, Experiência, Tecnologias): full-color logos on a
+// white disc so every brand reads clearly against the blush chip surface.
+.mat-mdc-chip {
+  --mat-chip-with-avatar-avatar-size: 26px;
+}
+
+img.mat-mdc-chip-avatar {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  padding: 1px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.mat-icon.mat-mdc-chip-avatar {
+  color: var(--mat-sys-primary);
+}
