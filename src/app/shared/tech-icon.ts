@@ -18,6 +18,7 @@ const LOGO_MAP: Record<string, LogoEntry> = {
   'Angular Material': { slug: 'angular', color: 'DD0031' },
   React: { slug: 'react', color: '61DAFB' },
   Java: { slug: 'java' },
+  'Spring Boot': { slug: 'springboot', color: '6DB33F' },
   JavaScript: { slug: 'javascript', color: 'F7DF1E' },
   PHP: { slug: 'php', color: '777BB4' },
   Laravel: { slug: 'laravel', color: 'FF2D20' },
