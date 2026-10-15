@@ -1,46 +1,43 @@
 export interface TechIcon {
-  kind: 'logo' | 'logo-mono' | 'material';
+  kind: 'logo' | 'material';
   value: string;
 }
 
-interface LogoEntry {
-  slug: string;
-  color?: string;
-  source?: 'devicon';
-}
+// Full-color "original" logos from Devicon: designed to stay legible on
+// light backgrounds, unlike single-color brand marks (white/yellow logos
+// disappear on the blush surfaces). Version pinned so icons don't change
+// unexpectedly.
+const DEVICON_CDN = 'https://cdn.jsdelivr.net/npm/devicon@2.16.0/icons';
 
-const SIMPLE_ICONS_CDN = 'https://cdn.simpleicons.org';
-const SIMPLE_ICONS_RAW = 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons';
-const DEVICON_CDN = 'https://cdn.jsdelivr.net/npm/devicon@latest/icons';
-
-const LOGO_MAP: Record<string, LogoEntry> = {
-  Angular: { slug: 'angular', color: 'DD0031' },
-  'Angular Material': { slug: 'angular', color: 'DD0031' },
-  React: { slug: 'react', color: '61DAFB' },
-  Java: { slug: 'java' },
-  'Spring Boot': { slug: 'springboot', color: '6DB33F' },
-  JavaScript: { slug: 'javascript', color: 'F7DF1E' },
-  PHP: { slug: 'php', color: '777BB4' },
-  Laravel: { slug: 'laravel', color: 'FF2D20' },
-  Linux: { slug: 'linux', color: 'FCC624' },
-  MySQL: { slug: 'mysql', color: '4479A1' },
-  PostgreSQL: { slug: 'postgresql', color: '4169E1' },
-  SQLite: { slug: 'sqlite', color: 'FFFFFF' },
-  Docker: { slug: 'docker', color: '2496ED' },
-  TypeScript: { slug: 'typescript', color: '3178C6' },
-  HTML: { slug: 'html5', color: 'E34F26' },
-  HTML5: { slug: 'html5', color: 'E34F26' },
-  SCSS: { slug: 'sass', color: 'CC6699' },
-  'CSS/SCSS': { slug: 'sass', color: 'CC6699' },
-  Git: { slug: 'git', color: 'F05032' },
-  GitHub: { slug: 'github', color: 'FFFFFF' },
-  'VS Code': { slug: 'visualstudiocode' },
-  'IntelliJ IDEA': { slug: 'intellij/intellij-original', source: 'devicon' },
-  Trello: { slug: 'trello', color: '0052CC' },
-  Figma: { slug: 'figma', color: 'F24E1E' },
-  'Node.js': { slug: 'nodedotjs', color: '339933' },
-  NestJS: { slug: 'nestjs', color: 'E0234E' },
-  'Google Cloud': { slug: 'googlecloud', color: '4285F4' },
+const LOGO_MAP: Record<string, string> = {
+  Angular: 'angular/angular-original',
+  'Angular Material': 'angularmaterial/angularmaterial-original',
+  React: 'react/react-original',
+  // The two-tone "original" cup is too thin at chip size; the solid glyph reads clearly.
+  Java: 'java/java-plain',
+  'Spring Boot': 'spring/spring-original',
+  JavaScript: 'javascript/javascript-original',
+  PHP: 'php/php-original',
+  Laravel: 'laravel/laravel-original',
+  Linux: 'linux/linux-original',
+  MySQL: 'mysql/mysql-original',
+  PostgreSQL: 'postgresql/postgresql-original',
+  SQLite: 'sqlite/sqlite-original',
+  Docker: 'docker/docker-original',
+  TypeScript: 'typescript/typescript-original',
+  HTML: 'html5/html5-original',
+  HTML5: 'html5/html5-original',
+  SCSS: 'sass/sass-original',
+  'CSS/SCSS': 'sass/sass-original',
+  Git: 'git/git-original',
+  GitHub: 'github/github-original',
+  'VS Code': 'vscode/vscode-original',
+  'IntelliJ IDEA': 'intellij/intellij-original',
+  Trello: 'trello/trello-original',
+  Figma: 'figma/figma-original',
+  'Node.js': 'nodejs/nodejs-original',
+  NestJS: 'nestjs/nestjs-original',
+  'Google Cloud': 'googlecloud/googlecloud-original',
 };
 
 const MATERIAL_ICON_MAP: Record<string, string> = {
@@ -55,14 +52,8 @@ const MATERIAL_ICON_MAP: Record<string, string> = {
 
 export function getTechIcon(name: string): TechIcon {
   const logo = LOGO_MAP[name];
-  if (logo?.source === 'devicon') {
-    return { kind: 'logo', value: `${DEVICON_CDN}/${logo.slug}.svg` };
-  }
-  if (logo?.color) {
-    return { kind: 'logo', value: `${SIMPLE_ICONS_CDN}/${logo.slug}/${logo.color}` };
-  }
   if (logo) {
-    return { kind: 'logo-mono', value: `${SIMPLE_ICONS_RAW}/${logo.slug}.svg` };
+    return { kind: 'logo', value: `${DEVICON_CDN}/${logo}.svg` };
   }
   return { kind: 'material', value: MATERIAL_ICON_MAP[name] ?? 'code' };
 }
