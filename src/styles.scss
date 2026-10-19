@@ -43,7 +43,10 @@ html {
         primary: mat.$rose-palette,
         tertiary: mat.$rose-palette,
       ),
-      typography: Roboto,
+      typography: (
+        plain-family: Inter,
+        brand-family: Poppins,
+      ),
       density: 0,
     )
   );
@@ -84,6 +87,14 @@ html {
   // stands out without clashing with the rest of the palette.
   --accent-gold: #9c6b2e;
   --accent-terracotta: #a6543b;
+
+  // Modern accent: the rosé brand color fading into a soft plum, used for
+  // the hero name, section underlines and primary call-to-action buttons.
+  --accent-plum: #8a4fb0;
+  --brand-gradient: linear-gradient(120deg, #{$primary} 0%, #c0607f 45%, var(--accent-plum) 100%);
+  --radius-lg: 20px;
+  --shadow-soft: 0 1px 2px rgba(46, 34, 41, 0.04), 0 8px 24px rgba(46, 34, 41, 0.06);
+  --shadow-lift: 0 18px 40px -12px rgba(173, 85, 112, 0.35);
 }
 
 body {
@@ -93,22 +104,40 @@ body {
   // Angular Material's system-level CSS variables. Learn more about these
   // variables at https://material.angular.dev/guide/system-variables
   background-color: var(--mat-sys-background);
+  // Two soft, blurred color fields behind the content give the page depth
+  // without competing with the cards on top of it.
+  background-image:
+    radial-gradient(60rem 40rem at 100% -10%, rgba(138, 79, 176, 0.1), transparent 60%),
+    radial-gradient(50rem 35rem at -10% 10%, rgba(173, 85, 112, 0.12), transparent 60%);
+  background-attachment: fixed;
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
+  font-family: 'Inter', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
 
   // Reset the user agent margin.
   margin: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
-// Clean, modern display font for headings and card titles; body copy stays
-// on Roboto for readability, keeping the overall look corporate and legible.
+::selection {
+  background-color: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container);
+}
+
+:focus-visible {
+  outline: 2px solid var(--mat-sys-primary);
+  outline-offset: 2px;
+}
+
+// Clean, modern display font for headings and card titles; body copy uses
+// Inter for readability, keeping the overall look corporate and legible.
 h1,
 h2,
 h3,
 .mat-toolbar,
 .mat-mdc-card-title {
-  font-family: 'Poppins', 'Roboto', sans-serif;
+  font-family: 'Poppins', 'Inter', sans-serif;
 }
 
 h1,
@@ -118,25 +147,82 @@ h3 {
   font-weight: 600;
 }
 
+.gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+// Shared heading used at the top of every section: a small numbered eyebrow
+// over the title, with a short gradient bar underneath.
+.section-heading {
+  margin-bottom: 1.75rem;
+
+  .section-eyebrow {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mat-sys-primary);
+  }
+
+  h2 {
+    margin: 0;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 56px;
+      height: 4px;
+      margin-top: 0.6rem;
+      border-radius: 4px;
+      background: var(--brand-gradient);
+    }
+  }
+}
+
 // Card titles pick up the pastel-pink accent instead of the default text color.
 .mat-mdc-card-title {
   color: var(--mat-sys-primary);
   font-weight: 600;
 }
 
-.mat-toolbar {
-  box-shadow: 0 1px 3px rgba(46, 34, 41, 0.08);
-}
-
 .mat-mdc-card {
+  --mat-card-elevated-container-color: rgba(255, 251, 252, 0.85);
   border: 1px solid var(--mat-sys-outline-variant);
-  border-radius: 12px;
-  box-shadow: 0 1px 2px rgba(46, 34, 41, 0.05);
-  transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(6px);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
 
   &:hover {
-    box-shadow: 0 10px 24px rgba(173, 85, 112, 0.18);
-    transform: translateY(-2px);
+    border-color: var(--mat-sys-outline);
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-3px);
+  }
+}
+
+// Primary CTA buttons use the brand gradient instead of a flat fill.
+.mat-mdc-unelevated-button.btn-gradient {
+  background: var(--brand-gradient);
+  color: #ffffff;
+  box-shadow: 0 8px 20px -6px rgba(173, 85, 112, 0.55);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 26px -6px rgba(173, 85, 112, 0.65);
   }
 }
 
@@ -145,7 +231,9 @@ h3 {
 .reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s ease-out;
 
   &.revealed {
     opacity: 1;
@@ -154,18 +242,28 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
   }
+
+  .mat-mdc-card:hover {
+    transform: none;
+  }
 }
-/* You can add global styles to this file, and also import other style files */
 
 // Tech chips (Projetos, Experiência, Tecnologias): full-color logos on a
 // white disc so every brand reads clearly against the blush chip surface.
 .mat-mdc-chip {
   --mat-chip-with-avatar-avatar-size: 26px;
+  --mat-chip-elevated-container-color: #ffffff;
+  --mat-chip-outline-color: var(--mat-sys-outline-variant);
+  --mat-chip-label-text-weight: 500;
 }
 
 img.mat-mdc-chip-avatar {
