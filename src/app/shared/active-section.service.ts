@@ -2,10 +2,13 @@ import { DestroyRef, Injectable, inject, signal } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class ActiveSectionService {
-  private readonly destroyRef = inject(DestroyRef);
   private observer?: IntersectionObserver;
 
   readonly activeId = signal<string | null>(null);
+
+  constructor() {
+    inject(DestroyRef).onDestroy(() => this.observer?.disconnect());
+  }
 
   observe(sectionIds: string[]): void {
     this.observer?.disconnect();
@@ -32,6 +35,5 @@ export class ActiveSectionService {
     );
 
     elements.forEach((el) => this.observer?.observe(el));
-    this.destroyRef.onDestroy(() => this.observer?.disconnect());
   }
 }
