@@ -1,20 +1,30 @@
-<h2>Contato</h2>
+<header class="section-heading">
+  <span class="section-eyebrow">06 · Contato</span>
+  <h2>Vamos conversar?</h2>
+</header>
 
 <mat-card class="feedback-card">
   <div class="feedback-layout">
     <div class="feedback-info">
+      <h3 class="feedback-title">Tem uma vaga, projeto ou ideia em mente?</h3>
       <p class="feedback-hint">
-        Tem algum feedback, proposta ou oportunidade? Envie uma mensagem direto para mim
-        ou entre em contato pelos canais abaixo.
+        Estou sempre aberta a conversar sobre oportunidades, projetos e feedbacks. Envie uma
+        mensagem pelo formulário ou fale comigo diretamente pelos canais abaixo.
       </p>
       <div class="direct-contact">
-        <a mat-stroked-button color="primary" [href]="'mailto:' + email">
-          <mat-icon>mail</mat-icon>
-          {{ email }}
+        <a class="contact-tile" [href]="'mailto:' + email">
+          <span class="contact-icon"><mat-icon>mail</mat-icon></span>
+          <span class="contact-text">
+            <span class="contact-label">E-mail</span>
+            <span class="contact-value">{{ email }}</span>
+          </span>
         </a>
-        <a mat-stroked-button color="primary" [href]="githubUrl" target="_blank" rel="noopener">
-          <mat-icon>code</mat-icon>
-          GitHub
+        <a class="contact-tile" [href]="githubUrl" target="_blank" rel="noopener">
+          <span class="contact-icon"><mat-icon svgIcon="github"></mat-icon></span>
+          <span class="contact-text">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">&#64;MariaClaraCorecha</span>
+          </span>
         </a>
       </div>
     </div>
@@ -47,9 +57,9 @@
         }
       </mat-form-field>
 
-      <button mat-flat-button color="primary" type="submit" class="submit-button">
+      <button mat-flat-button type="submit" class="submit-button btn-gradient">
         <mat-icon>send</mat-icon>
-        Enviar feedback
+        Enviar mensagem
       </button>
     </form>
   </div>

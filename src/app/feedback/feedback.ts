@@ -43,7 +43,7 @@ export class Feedback {
     }
 
     const { name, email, message } = this.form.getRawValue();
-    const subject = `Feedback de ${name} pelo portfólio`;
+    const subject = `Contato de ${name} pelo portfólio`;
     const body = `${message}\n\nEnviado por: ${name} (${email})`;
     const mailtoUrl =
       `mailto:${FEEDBACK_EMAIL}` +
@@ -52,7 +52,7 @@ export class Feedback {
 
     window.location.href = mailtoUrl;
 
-    this.snackBar.open('Abrindo seu cliente de e-mail para enviar o feedback...', 'Fechar', {
+    this.snackBar.open('Abrindo seu cliente de e-mail para enviar a mensagem...', 'Fechar', {
       duration: 5000,
     });
     this.form.reset();
