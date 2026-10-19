@@ -29,12 +29,7 @@
 <app-footer />
 
 @if (showBackToTop()) {
-  <button
-    mat-fab
-    class="back-to-top"
-    aria-label="Voltar ao topo"
-    (click)="scrollToTop()"
-  >
+  <button mat-fab class="back-to-top" aria-label="Voltar ao topo" (click)="scrollToTop()">
     <mat-icon>arrow_upward</mat-icon>
   </button>
 }

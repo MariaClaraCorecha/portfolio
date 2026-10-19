@@ -1,14 +1,14 @@
 .content {
-  max-width: 960px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 section {
-  scroll-margin-top: 72px;
+  scroll-margin-top: 88px;
 }
 
 .back-to-top {
@@ -16,5 +16,13 @@ section {
   right: 1.5rem;
   bottom: 1.5rem;
   z-index: 90;
-  box-shadow: 0 4px 14px rgba(173, 85, 112, 0.35);
+  background: var(--brand-gradient);
+  color: #ffffff;
+  box-shadow: 0 10px 24px -6px rgba(173, 85, 112, 0.6);
+}
+
+@media (max-width: 599px) {
+  .content {
+    gap: 3.5rem;
+  }
 }
