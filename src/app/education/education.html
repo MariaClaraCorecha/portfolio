@@ -1,8 +1,11 @@
-<h2>Formação Acadêmica</h2>
+<header class="section-heading">
+  <span class="section-eyebrow">02 · Formação</span>
+  <h2>Formação Acadêmica</h2>
+</header>
 <div class="timeline">
   @for (entry of entries; track entry.course + entry.institution) {
     <mat-card class="timeline-item">
-      <mat-icon class="timeline-icon">school</mat-icon>
+      <span class="timeline-icon" aria-hidden="true"><mat-icon>school</mat-icon></span>
       <div class="timeline-content">
         <mat-card-header>
           <mat-card-title>{{ entry.course }}</mat-card-title>

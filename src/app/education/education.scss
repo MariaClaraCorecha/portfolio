@@ -1,19 +1,47 @@
+// Vertical timeline: a gradient rail on the left with an icon node per entry.
 .timeline {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
+  padding-left: 3.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 1.2rem;
+    width: 2px;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, var(--mat-sys-primary), var(--accent-plum), transparent);
+  }
 }
 
 .timeline-item {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  padding: 1rem;
+  position: relative;
+  overflow: visible;
+  padding: 1.25rem 1.5rem;
 }
 
 .timeline-icon {
-  color: var(--mat-sys-primary);
-  margin-top: 0.5rem;
+  position: absolute;
+  top: 1.25rem;
+  left: -3.5rem;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--brand-gradient);
+  color: #ffffff;
+  box-shadow: 0 0 0 5px var(--mat-sys-background);
+
+  mat-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
 }
 
 .timeline-content {
@@ -21,10 +49,32 @@
 }
 
 mat-card-header {
+  padding: 0;
   margin-bottom: 0.75rem;
 }
 
+mat-card-content {
+  padding: 0;
+}
+
+@media (max-width: 599px) {
+  .timeline {
+    padding-left: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .timeline-icon {
+    position: static;
+    margin-bottom: 0.75rem;
+    box-shadow: none;
+  }
+}
+
 mat-card-title {
+  font-size: 1.2rem;
   margin-bottom: 0.35rem;
 }
 
@@ -32,8 +82,8 @@ mat-card-title {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin: 0 0 1.25rem;
-  font-size: 0.85rem;
+  margin: 0 0 1rem;
+  font-size: 0.88rem;
   color: var(--mat-sys-on-surface-variant);
 
   mat-icon {
@@ -46,10 +96,10 @@ mat-card-title {
 
 mat-chip-set {
   display: block;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .description {
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
