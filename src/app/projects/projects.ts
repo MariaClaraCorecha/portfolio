@@ -65,7 +65,7 @@ export class Projects {
           description:
             'Sistema de gerenciamento de biblioteca desenvolvido em Java, permitindo emprestar, vender e alugar livros, com banco de dados relacional MySQL para armazenar informações sobre livros, clientes e bibliotecários. Aplica Programação Orientada a Objetos (POO) e modelagem de dados, utilizando encapsulamento, herança e abstração como pilares da arquitetura do sistema.',
           tech: ['Java', 'POO', 'MySQL'],
-          link: 'https://github.com/MariaClaraCorecha/Biblioteca',
+          link: 'https://github.com/MariaClaraCorecha/biblioteca-api-backend',
         },
         {
           title: 'Estoque API - Controle de Estoque',
