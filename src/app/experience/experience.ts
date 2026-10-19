@@ -50,7 +50,7 @@ export class Experience {
       ],
     },
     {
-      role: 'Estagiário de TI - Desenvolvimento',
+      role: 'Estagiária de TI — Desenvolvimento',
       company: 'Grupo Mônaco Diesel',
       period: 'Janeiro de 2026 — Março de 2026',
       summary:
