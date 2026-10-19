@@ -1,14 +1,22 @@
-<h2>Projetos</h2>
+<header class="section-heading">
+  <span class="section-eyebrow">05 · Portfólio</span>
+  <h2>Projetos</h2>
+</header>
 
 @for (category of categories; track category.key) {
-  <div class="project-category" [class.frontend]="category.key === 'frontend'" [class.backend]="category.key === 'backend'">
+  <div class="project-category" [class]="category.key">
     <h3 class="category-heading">
       <mat-icon>{{ category.icon }}</mat-icon>
       {{ category.name }}
     </h3>
     <div class="projects-grid">
       @for (project of category.projects; track project.title) {
-        <mat-card>
+        @let isRepo = project.link.includes('github.com');
+        <mat-card class="project-card">
+          <div class="project-banner" aria-hidden="true">
+            <mat-icon>{{ isRepo ? 'terminal' : 'language' }}</mat-icon>
+            <span class="project-kind">{{ isRepo ? 'Código-fonte' : 'Online' }}</span>
+          </div>
           <mat-card-header>
             <mat-card-title>{{ project.title }}</mat-card-title>
           </mat-card-header>
@@ -29,7 +37,31 @@
             </mat-chip-set>
           </mat-card-content>
           <mat-card-actions>
-            <a mat-button color="primary" [href]="project.link">Ver Projeto</a>
+            @if (isRepo) {
+              <a
+                mat-flat-button
+                class="btn-gradient"
+                [href]="project.link"
+                target="_blank"
+                rel="noopener"
+                [attr.aria-label]="'Ver código de ' + project.title"
+              >
+                <mat-icon svgIcon="github"></mat-icon>
+                Ver código
+              </a>
+            } @else {
+              <a
+                mat-flat-button
+                class="btn-gradient"
+                [href]="project.link"
+                target="_blank"
+                rel="noopener"
+                [attr.aria-label]="'Abrir site de ' + project.title"
+              >
+                <mat-icon>open_in_new</mat-icon>
+                Ver site
+              </a>
+            }
           </mat-card-actions>
         </mat-card>
       }
