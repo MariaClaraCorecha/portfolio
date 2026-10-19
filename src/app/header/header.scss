@@ -5,19 +5,64 @@
   z-index: 100;
 }
 
-// Angular Material's M3 toolbar always uses the surface/on-surface tokens
-// regardless of the `color` input, so the pastel-pink brand bar is set
-// explicitly here instead of relying on `color="primary"`.
-.mat-toolbar {
-  background-color: var(--mat-sys-primary);
-  color: var(--mat-sys-on-primary);
+// Frosted-glass bar: transparent over the hero, gaining a blurred surface and
+// a hairline border once the page scrolls under it.
+.header-bar {
+  height: 72px;
+  padding: 0 1.25rem;
+  background-color: transparent;
+  color: var(--mat-sys-on-surface);
+  box-shadow: none;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &.scrolled {
+    background-color: rgba(255, 251, 252, 0.78);
+    backdrop-filter: saturate(160%) blur(14px);
+    border-bottom-color: var(--mat-sys-outline-variant);
+    box-shadow: 0 6px 24px -12px rgba(46, 34, 41, 0.18);
+  }
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .brand {
-  font-family: 'Poppins', 'Roboto', sans-serif;
-  font-size: 1.15rem;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--brand-gradient);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.02em;
+  box-shadow: 0 6px 16px -6px rgba(173, 85, 112, 0.6);
+}
+
+.brand-name {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .spacer {
@@ -26,69 +71,59 @@
 
 .nav-links {
   display: flex;
-  gap: 0.4rem;
-}
+  gap: 0.25rem;
+  margin-right: 0.5rem;
 
-.nav-links a,
-.nav-menu-trigger,
-.github-link {
-  color: var(--mat-sys-on-primary);
-  transition: background-color 0.15s ease-in-out;
+  a {
+    padding: 0.45rem 0.85rem;
+    border-radius: 999px;
+    color: var(--mat-sys-on-surface-variant);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease;
 
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.16);
+    &:hover {
+      color: var(--mat-sys-on-surface);
+      background-color: rgba(173, 85, 112, 0.08);
+    }
+
+    &.active {
+      color: var(--mat-sys-primary);
+      background-color: var(--mat-sys-primary-container);
+    }
   }
 }
 
-.nav-links a {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: 'Poppins', 'Roboto', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 500;
-  overflow: visible;
-
-  mat-icon {
-    width: 18px;
-    height: 18px;
-    font-size: 18px;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 4px;
-    width: 0;
-    height: 2px;
-    background-color: currentColor;
-    border-radius: 1px;
-    transition: width 0.25s ease-in-out, left 0.25s ease-in-out;
-  }
-
-  &:hover::after {
-    width: 55%;
-    left: 22.5%;
-  }
+.github-link,
+.nav-menu-trigger {
+  color: var(--mat-sys-on-surface);
 }
 
-.nav-links a.active::after {
-  width: 55%;
-  left: 22.5%;
+.header-cta {
+  margin-left: 0.25rem;
 }
 
 .nav-menu-trigger {
   display: none;
 }
 
-@media (max-width: 1099px) {
+@media (max-width: 959px) {
   .nav-links {
     display: none;
   }
 
   .nav-menu-trigger {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 479px) {
+  .header-cta,
+  .brand-name {
+    display: none;
   }
 }

@@ -1,56 +1,47 @@
-<mat-toolbar color="primary">
-  <span class="brand">{{ title() }}</span>
-  <span class="spacer"></span>
-  <nav class="nav-links">
-    <a mat-button href="#sobre" [class.active]="activeSection.activeId() === 'sobre'">
-      <mat-icon>person</mat-icon>
-      <span>Sobre mim</span>
+<mat-toolbar class="header-bar" [class.scrolled]="scrolled()">
+  <div class="header-inner">
+    <a class="brand" href="#sobre" aria-label="Ir para o início">
+      <span class="brand-mark">MC</span>
+      <span class="brand-name">{{ title() }}</span>
     </a>
-    <a mat-button href="#formacao" [class.active]="activeSection.activeId() === 'formacao'">
-      <mat-icon>school</mat-icon>
-      <span>Formação</span>
+    <span class="spacer"></span>
+    <nav class="nav-links" aria-label="Navegação principal">
+      @for (link of links; track link.id) {
+        <a
+          [href]="'#' + link.id"
+          [class.active]="activeSection.activeId() === link.id"
+          [attr.aria-current]="activeSection.activeId() === link.id ? 'true' : null"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+    <a
+      mat-icon-button
+      class="github-link"
+      [href]="githubUrl"
+      target="_blank"
+      rel="noopener"
+      aria-label="GitHub"
+    >
+      <mat-icon svgIcon="github"></mat-icon>
     </a>
-    <a mat-button href="#experiencia" [class.active]="activeSection.activeId() === 'experiencia'">
-      <mat-icon>work</mat-icon>
-      <span>Experiência</span>
-    </a>
-    <a mat-button href="#tecnologias" [class.active]="activeSection.activeId() === 'tecnologias'">
-      <mat-icon>memory</mat-icon>
-      <span>Tecnologias</span>
-    </a>
-    <a mat-button href="#projetos" [class.active]="activeSection.activeId() === 'projetos'">
-      <mat-icon>folder</mat-icon>
-      <span>Projetos</span>
-    </a>
-    <a mat-button href="#contato" [class.active]="activeSection.activeId() === 'contato'">
-      <mat-icon>mail</mat-icon>
-      <span>Contato</span>
-    </a>
-  </nav>
-  <button
-    mat-icon-button
-    class="nav-menu-trigger"
-    aria-label="Abrir menu de navegação"
-    [matMenuTriggerFor]="navMenu"
-  >
-    <mat-icon>menu</mat-icon>
-  </button>
-  <mat-menu #navMenu="matMenu">
-    <a mat-menu-item href="#sobre"><mat-icon>person</mat-icon>Sobre mim</a>
-    <a mat-menu-item href="#formacao"><mat-icon>school</mat-icon>Formação</a>
-    <a mat-menu-item href="#experiencia"><mat-icon>work</mat-icon>Experiência</a>
-    <a mat-menu-item href="#tecnologias"><mat-icon>memory</mat-icon>Tecnologias</a>
-    <a mat-menu-item href="#projetos"><mat-icon>folder</mat-icon>Projetos</a>
-    <a mat-menu-item href="#contato"><mat-icon>mail</mat-icon>Contato</a>
-  </mat-menu>
-  <a
-    mat-icon-button
-    class="github-link"
-    href="https://github.com/MariaClaraCorecha"
-    target="_blank"
-    rel="noopener"
-    aria-label="GitHub"
-  >
-    <mat-icon>code</mat-icon>
-  </a>
+    <a mat-flat-button class="btn-gradient header-cta" href="#contato">Fale comigo</a>
+    <button
+      mat-icon-button
+      class="nav-menu-trigger"
+      aria-label="Abrir menu de navegação"
+      [matMenuTriggerFor]="navMenu"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #navMenu="matMenu">
+      @for (link of links; track link.id) {
+        <a mat-menu-item [href]="'#' + link.id">
+          <mat-icon>{{ link.icon }}</mat-icon
+          >{{ link.label }}
+        </a>
+      }
+    </mat-menu>
+  </div>
 </mat-toolbar>
