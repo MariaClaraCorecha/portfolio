@@ -29,7 +29,20 @@
 
   <div class="hero-visual" aria-hidden="true">
     <div class="avatar-ring">
-      <div class="avatar">{{ initials }}</div>
+      <div class="avatar">
+        @if (avatarFailed()) {
+          {{ initials }}
+        } @else {
+          <img
+            class="avatar-img"
+            [src]="avatarUrl"
+            [alt]="name"
+            width="260"
+            height="260"
+            (error)="avatarFailed.set(true)"
+          />
+        }
+      </div>
     </div>
     <div class="floating-card floating-card--top">
       <mat-icon>code</mat-icon>
