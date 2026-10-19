@@ -1,10 +1,15 @@
-<mat-toolbar color="tertiary" class="footer">
+<footer class="footer">
   <div class="footer-content">
-    <span class="brand">&copy; {{ year }} Maria Clara Corecha</span>
-    <span class="spacer"></span>
+    <div class="footer-brand">
+      <span class="brand-mark">MC</span>
+      <div>
+        <p class="brand">Maria Clara Corecha</p>
+        <p class="tagline">Desenvolvedora de Software Full Stack</p>
+      </div>
+    </div>
     <div class="footer-links">
       <a mat-icon-button [href]="githubUrl" target="_blank" rel="noopener" aria-label="GitHub">
-        <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="" class="footer-icon" />
+        <mat-icon svgIcon="github"></mat-icon>
       </a>
       <a mat-icon-button [href]="'mailto:' + email" aria-label="Enviar e-mail">
         <mat-icon>email</mat-icon>
@@ -12,4 +17,5 @@
       <span class="footer-email">{{ email }}</span>
     </div>
   </div>
-</mat-toolbar>
+  <p class="copyright">&copy; {{ year }} Maria Clara Corecha · Feito com Angular</p>
+</footer>

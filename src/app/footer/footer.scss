@@ -1,33 +1,53 @@
-.spacer {
-  flex: 1 1 auto;
-}
-
-// Angular Material's M3 toolbar always uses the surface/on-surface tokens
-// regardless of the `color` input, so the dark tertiary footer bar is set
-// explicitly here instead of relying on `color="tertiary"`.
+// Deep wine footer anchoring the page, with a soft plum glow in the corner.
 .footer {
-  background-color: var(--mat-sys-tertiary);
+  padding: 2.5rem 1.25rem 1.5rem;
+  background:
+    radial-gradient(40rem 20rem at 100% 0%, rgba(138, 79, 176, 0.35), transparent 60%),
+    var(--mat-sys-tertiary);
   color: var(--mat-sys-on-tertiary);
-  font-size: 0.85rem;
-  height: auto;
-  min-height: 64px;
-  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
 }
 
 .footer-content {
-  width: 100%;
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1.25rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--brand-gradient);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
 .brand {
-  font-family: 'Poppins', 'Roboto', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.01em;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.tagline {
+  opacity: 0.8;
+  font-size: 0.85rem;
 }
 
 .footer-links {
@@ -45,16 +65,18 @@
   }
 }
 
-.footer-icon {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
-}
-
 .footer-email {
   margin-left: 0.25rem;
-  font-size: 0.8rem;
   opacity: 0.9;
+}
+
+.copyright {
+  max-width: 1080px;
+  margin: 1.75rem auto 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.8rem;
+  opacity: 0.75;
 }
 
 @media (max-width: 480px) {
