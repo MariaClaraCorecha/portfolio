@@ -8,6 +8,11 @@ interface Highlight {
   label: string;
 }
 
+interface Stat {
+  value: string;
+  label: string;
+}
+
 @Component({
   selector: 'app-about',
   imports: [MatCardModule, MatIconModule, MatButtonModule],
@@ -16,9 +21,17 @@ interface Highlight {
 })
 export class About {
   readonly name = 'Maria Clara Corecha';
+  readonly initials = 'MC';
   readonly role = 'Desenvolvedora de Software Full Stack';
+  readonly status = 'Desenvolvendo no Grupo Mônaco';
   readonly githubUrl = 'https://github.com/MariaClaraCorecha';
   readonly email = 'mariacorecha18@gmail.com';
+
+  readonly stats: Stat[] = [
+    { value: '6+', label: 'Projetos publicados' },
+    { value: '20+', label: 'Tecnologias no dia a dia' },
+    { value: 'Front + Back', label: 'Atuação Full Stack' },
+  ];
 
   readonly highlights: Highlight[] = [
     { icon: 'school', label: 'Estudante de Ciência da Computação' },

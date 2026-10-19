@@ -1,44 +1,76 @@
+<div class="hero">
+  <div class="hero-body">
+    <span class="status-badge">
+      <span class="status-dot" aria-hidden="true"></span>
+      {{ status }}
+    </span>
+    <p class="greeting">Olá, eu sou</p>
+    <h1 class="profile-name gradient-text">{{ name }}</h1>
+    <p class="profile-role">{{ role }}</p>
+    <p class="lead">
+      Construo sistemas web completos — do banco de dados à interface — com
+      <strong>Angular</strong>, <strong>TypeScript</strong>, <strong>PHP/Laravel</strong> e
+      <strong>Java</strong>, aplicando Clean Architecture e foco em experiência do usuário.
+    </p>
+    <div class="cta-row">
+      <a mat-flat-button class="btn-gradient" href="#projetos">
+        <mat-icon>rocket_launch</mat-icon>
+        Ver projetos
+      </a>
+      <a mat-stroked-button href="#contato">
+        <mat-icon>mail</mat-icon>
+        Entrar em contato
+      </a>
+      <a mat-icon-button [href]="githubUrl" target="_blank" rel="noopener" aria-label="GitHub">
+        <mat-icon svgIcon="github"></mat-icon>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual" aria-hidden="true">
+    <div class="avatar-ring">
+      <div class="avatar">{{ initials }}</div>
+    </div>
+    <div class="floating-card floating-card--top">
+      <mat-icon>code</mat-icon>
+      Full Stack
+    </div>
+    <div class="floating-card floating-card--bottom">
+      <mat-icon>school</mat-icon>
+      Ciência da Computação
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  @for (stat of stats; track stat.label) {
+    <div class="stat">
+      <span class="stat-value gradient-text">{{ stat.value }}</span>
+      <span class="stat-label">{{ stat.label }}</span>
+    </div>
+  }
+</div>
+
 <mat-card class="about-card">
-  <div class="about-layout">
-    <div class="avatar-col">
-      <div class="avatar">
-        <mat-icon>account_circle</mat-icon>
+  <header class="section-heading">
+    <span class="section-eyebrow">01 · Sobre mim</span>
+    <h2>Quem sou eu</h2>
+  </header>
+  <p class="bio">
+    Desenvolvedora de Software Full Stack, estudante de Ciência da Computação e atualmente Auxiliar
+    de TI no Grupo Mônaco, onde projeto, desenvolvo e mantenho sistemas internos com Angular,
+    TypeScript, PHP e Laravel. Aplico Clean Architecture, boas práticas de engenharia de software e
+    controle de versão com Git/GitHub na construção de APIs RESTful e interfaces responsivas com
+    foco em experiência do usuário (UX/UI). Atuo tanto em frontend quanto em backend, com interesse
+    contínuo em bancos de dados relacionais, arquitetura de sistemas e metodologias ágeis de
+    desenvolvimento.
+  </p>
+  <div class="highlights">
+    @for (item of highlights; track item.label) {
+      <div class="highlight">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span>{{ item.label }}</span>
       </div>
-      <div class="avatar-actions">
-        <a mat-icon-button [href]="githubUrl" target="_blank" rel="noopener" aria-label="GitHub">
-          <mat-icon>code</mat-icon>
-        </a>
-        <a mat-icon-button [href]="'mailto:' + email" aria-label="Enviar e-mail">
-          <mat-icon>mail</mat-icon>
-        </a>
-      </div>
-    </div>
-    <div class="about-body">
-      <p class="eyebrow">Sobre mim</p>
-      <h1 class="profile-name">{{ name }}</h1>
-      <p class="profile-role">{{ role }}</p>
-      <p class="bio">
-        Desenvolvedora de Software Full Stack, estudante de Ciência da Computação e
-        atualmente Auxiliar de TI no Grupo Mônaco, onde projeto, desenvolvo e mantenho
-        sistemas internos com Angular, TypeScript, PHP e Laravel. Aplico Clean
-        Architecture, boas práticas de engenharia de software e controle de versão com
-        Git/GitHub na construção de APIs RESTful e interfaces responsivas com foco em
-        experiência do usuário (UX/UI). Atuo tanto em frontend quanto em backend, com
-        interesse contínuo em bancos de dados relacionais, arquitetura de sistemas e
-        metodologias ágeis de desenvolvimento.
-      </p>
-      <div class="highlights">
-        @for (item of highlights; track item.label) {
-          <div class="highlight">
-            <mat-icon>{{ item.icon }}</mat-icon>
-            <span>{{ item.label }}</span>
-          </div>
-        }
-      </div>
-      <div class="cta-row">
-        <a mat-flat-button color="primary" href="#projetos">Ver Projetos</a>
-        <a mat-stroked-button color="primary" href="#contato">Entrar em contato</a>
-      </div>
-    </div>
+    }
   </div>
 </mat-card>
