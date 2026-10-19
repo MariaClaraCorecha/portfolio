@@ -1,8 +1,16 @@
-<h2>Tecnologias</h2>
+<header class="section-heading">
+  <span class="section-eyebrow">04 · Stack</span>
+  <h2>Tecnologias</h2>
+</header>
 <div class="tech-categories">
   @for (category of categories; track category.name) {
-    <div class="tech-category">
-      <h3>{{ category.name }}</h3>
+    <mat-card class="tech-category">
+      <h3>
+        <span class="category-icon" aria-hidden="true"
+          ><mat-icon>{{ category.icon }}</mat-icon></span
+        >
+        {{ category.name }}
+      </h3>
       <mat-chip-set [attr.aria-label]="category.name">
         @for (item of category.items; track item) {
           @let icon = getTechIcon(item);
@@ -16,6 +24,6 @@
           </mat-chip>
         }
       </mat-chip-set>
-    </div>
+    </mat-card>
   }
 </div>
