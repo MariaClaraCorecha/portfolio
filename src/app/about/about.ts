@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -25,6 +25,8 @@ export class About {
   readonly role = 'Desenvolvedora de Software Full Stack';
   readonly status = 'Desenvolvendo no Grupo Mônaco';
   readonly githubUrl = 'https://github.com/MariaClaraCorecha';
+  readonly avatarUrl = `${this.githubUrl}.png?size=520`;
+  readonly avatarFailed = signal(false);
   readonly email = 'mariacorecha18@gmail.com';
 
   readonly stats: Stat[] = [

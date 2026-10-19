@@ -2,8 +2,8 @@
   display: block;
 }
 
-// Hero: name, pitch and calls-to-action on the left, a gradient monogram
-// avatar with two floating tags on the right.
+// Hero: name, pitch and calls-to-action on the left, the GitHub avatar
+// (initials monogram as fallback) with two floating tags on the right.
 .hero {
   display: grid;
   grid-template-columns: 1.4fr 1fr;
@@ -133,6 +133,13 @@
   font-size: clamp(3.5rem, 7vw, 5rem);
   font-weight: 700;
   color: var(--mat-sys-primary);
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .floating-card {
