@@ -68,6 +68,8 @@
 
   mat-card-actions {
     padding: 1rem 1.25rem 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 
     a {
       border-radius: 999px;

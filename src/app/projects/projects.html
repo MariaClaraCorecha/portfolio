@@ -11,11 +11,10 @@
     </h3>
     <div class="projects-grid">
       @for (project of category.projects; track project.title) {
-        @let isRepo = project.link.includes('github.com');
         <mat-card class="project-card">
           <div class="project-banner" aria-hidden="true">
-            <mat-icon>{{ isRepo ? 'terminal' : 'language' }}</mat-icon>
-            <span class="project-kind">{{ isRepo ? 'Código-fonte' : 'Online' }}</span>
+            <mat-icon>{{ project.site ? 'language' : 'terminal' }}</mat-icon>
+            <span class="project-kind">{{ project.site ? 'Online' : 'Código-fonte' }}</span>
           </div>
           <mat-card-header>
             <mat-card-title>{{ project.title }}</mat-card-title>
@@ -37,11 +36,21 @@
             </mat-chip-set>
           </mat-card-content>
           <mat-card-actions>
-            @if (isRepo) {
+            @if (project.site) {
               <a
                 mat-flat-button
                 class="btn-gradient"
-                [href]="project.link"
+                [href]="project.site"
+                target="_blank"
+                rel="noopener"
+                [attr.aria-label]="'Abrir site de ' + project.title"
+              >
+                <mat-icon>open_in_new</mat-icon>
+                Ver site
+              </a>
+              <a
+                mat-stroked-button
+                [href]="project.repo"
                 target="_blank"
                 rel="noopener"
                 [attr.aria-label]="'Ver código de ' + project.title"
@@ -53,13 +62,13 @@
               <a
                 mat-flat-button
                 class="btn-gradient"
-                [href]="project.link"
+                [href]="project.repo"
                 target="_blank"
                 rel="noopener"
-                [attr.aria-label]="'Abrir site de ' + project.title"
+                [attr.aria-label]="'Ver código de ' + project.title"
               >
-                <mat-icon>open_in_new</mat-icon>
-                Ver site
+                <mat-icon svgIcon="github"></mat-icon>
+                Ver código
               </a>
             }
           </mat-card-actions>
