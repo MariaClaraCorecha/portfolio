@@ -87,6 +87,13 @@ export class Projects {
           repo: 'https://github.com/MariaClaraCorecha/estoque-api',
         },
         {
+          title: 'Lista de Mercado - API REST',
+          description:
+            'API REST para gerenciar uma lista de compras de mercado, desenvolvida em Java 21 e Spring Boot com Spring Data JPA, Bean Validation e banco H2 em memória. Permite criar, listar com filtros por status e categoria, atualizar, marcar itens como comprados e remover. Estruturada em Arquitetura Limpa, com um caso de uso por ação, tratamento global de exceções e documentação interativa via OpenAPI/Scalar.',
+          tech: ['Java', 'Spring Boot', 'REST API', 'Arquitetura Limpa'],
+          repo: 'https://github.com/MariaClaraCorecha/list-mercado',
+        },
+        {
           title: 'NASA API - Fotos de Marte',
           description:
             'Aplicação em PHP que consome a API pública da NASA para exibir fotos capturadas pelos rovers em Marte, junto com as informações de cada registro. Pratica integração com APIs externas e tratamento de dados em JSON.',
